@@ -6,11 +6,11 @@ const pains = [
   'Reportes manuales que toman horas cada semana',
   'Tareas repetitivas que consumen a tu equipo',
   'Datos desconectados entre sistemas',
-  'Informacion critica que no llega a tiempo',
+  'Información crítica que no llega a tiempo',
 ];
 
 const solutions = [
-  'Reportes automaticos entregados por WhatsApp',
+  'Reportes automáticos entregados por WhatsApp',
   'Agentes AI que ejecutan tareas operacionales',
   'Datos conectados y accesibles en tiempo real',
   'Alertas inteligentes antes de que sea tarde',

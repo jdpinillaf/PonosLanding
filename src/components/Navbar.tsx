@@ -5,8 +5,8 @@ import { useState, useEffect } from 'react';
 const links = [
   { label: 'Servicios', href: '#servicios' },
   { label: 'Demos', href: '#demos' },
-  { label: 'Como Funciona', href: '#como-funciona' },
-  { label: 'Casos de Exito', href: '#casos' },
+  { label: 'Cómo Funciona', href: '#como-funciona' },
+  { label: 'Casos de Éxito', href: '#casos' },
 ];
 
 export default function Navbar() {

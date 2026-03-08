@@ -18,7 +18,7 @@ const workSans = Work_Sans({
 export const metadata: Metadata = {
   title: 'Ponos | Consultora AI — Soluciones personalizadas para tu empresa',
   description:
-    'Consultora boutique de inteligencia artificial. Conectamos AI a tus datos reales, en tus canales. Agentes operacionales, automatizacion financiera y mas.',
+    'Consultora boutique de inteligencia artificial. Conectamos AI a tus datos reales, en tus canales. Agentes operacionales, automatización financiera y más.',
   keywords: [
     'AI',
     'inteligencia artificial',

@@ -7,7 +7,7 @@ const casos = [
     name: 'JPRO Solutions',
     sector: 'Servicios Financieros',
     quote:
-      'Automatizamos cobros y facturacion, reduciendo horas de trabajo manual cada semana.',
+      'Automatizamos cobros y facturación, reduciendo horas de trabajo manual cada semana.',
   },
   {
     name: 'Ponos',
@@ -23,7 +23,7 @@ export default function CasosExito() {
       <div className="mx-auto max-w-6xl">
         <ScrollReveal>
           <h2 className="font-lora text-center text-3xl font-bold text-carbon sm:text-4xl">
-            Casos de Exito
+            Casos de Éxito
           </h2>
         </ScrollReveal>
 

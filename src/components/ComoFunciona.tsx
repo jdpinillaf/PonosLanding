@@ -5,15 +5,15 @@ import ScrollReveal from './ScrollReveal';
 const steps = [
   {
     num: '01',
-    title: 'Diagnostico',
+    title: 'Diagnóstico',
     description:
-      'Analizamos tus procesos, datos y canales para identificar donde AI genera mayor impacto.',
+      'Analizamos tus procesos, datos y canales para identificar dónde AI genera mayor impacto.',
   },
   {
     num: '02',
-    title: 'Implementacion',
+    title: 'Implementación',
     description:
-      'Construimos e integramos la solucion a tus sistemas existentes. Sin migrar, sin interrumpir.',
+      'Construimos e integramos la solución a tus sistemas existentes. Sin migrar, sin interrumpir.',
   },
   {
     num: '03',
@@ -29,7 +29,7 @@ export default function ComoFunciona() {
       <div className="mx-auto max-w-6xl">
         <ScrollReveal>
           <h2 className="font-lora text-center text-3xl font-bold text-carbon sm:text-4xl">
-            Como Funciona
+            Cómo Funciona
           </h2>
         </ScrollReveal>
 

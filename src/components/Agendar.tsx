@@ -22,7 +22,7 @@ export default function Agendar() {
             Agenda tu consulta gratuita
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-warm-gray">
-            30 minutos para explorar como AI puede transformar tu operacion.
+            30 minutos para explorar cómo AI puede transformar tu operación.
           </p>
         </ScrollReveal>
         <ScrollReveal delay={200}>

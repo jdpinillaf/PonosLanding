@@ -6,21 +6,21 @@ const servicios = [
   {
     title: 'Agentes Operacionales',
     description:
-      'Agente conectado a tu base de datos. Reportes automaticos, alertas y briefings diarios entregados por WhatsApp.',
+      'Agente conectado a tu base de datos. Reportes automáticos, alertas y briefings diarios entregados por WhatsApp.',
     icon: '\u{1F916}',
     soon: false,
   },
   {
-    title: 'Automatizacion Financiera',
+    title: 'Automatización Financiera',
     description:
-      'Cobros, facturacion y seguimiento de pagos automatizados. Menos trabajo manual, menos errores.',
+      'Cobros, facturación y seguimiento de pagos automatizados. Menos trabajo manual, menos errores.',
     icon: '\u{1F4B0}',
     soon: false,
   },
   {
     title: 'Second Brain',
     description:
-      'Base de conocimiento viva para toda tu empresa. Documentacion, procesos y decisiones en un solo lugar.',
+      'Base de conocimiento viva para toda tu empresa. Documentación, procesos y decisiones en un solo lugar.',
     icon: '\u{1F9E0}',
     soon: false,
   },
@@ -34,7 +34,7 @@ const servicios = [
   {
     title: 'Agente de Marketing',
     description:
-      'Ciclo completo de marketing automatizado. Contenido, distribucion y analisis con AI.',
+      'Ciclo completo de marketing automatizado. Contenido, distribución y análisis con AI.',
     icon: '\u{1F4E3}',
     soon: true,
   },
@@ -46,7 +46,7 @@ export default function Servicios() {
       <div className="mx-auto max-w-6xl">
         <ScrollReveal>
           <h2 className="font-lora text-center text-3xl font-bold text-carbon sm:text-4xl">
-            Nuestros Modulos
+            Nuestros Módulos
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-warm-gray">
             Soluciones modulares que se adaptan a las necesidades de tu empresa.
@@ -59,7 +59,7 @@ export default function Servicios() {
               <div className="group relative rounded-2xl border border-sand bg-white/50 p-7 transition-all duration-300 hover:-translate-y-1 hover:border-amber/30 hover:shadow-xl hover:shadow-amber/5">
                 {s.soon && (
                   <span className="absolute right-4 top-4 rounded-full bg-amber/10 px-3 py-1 text-xs font-medium text-amber">
-                    Proximamente
+                    Próximamente
                   </span>
                 )}
                 <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-sand text-2xl transition-transform duration-300 group-hover:scale-110">
