@@ -1,28 +1,19 @@
 'use client';
 
 import ScrollReveal from './ScrollReveal';
-
-const pains = [
-  'Reportes manuales que toman horas cada semana',
-  'Tareas repetitivas que consumen a tu equipo',
-  'Datos desconectados entre sistemas',
-  'Información crítica que no llega a tiempo',
-];
-
-const solutions = [
-  'Reportes automáticos entregados por WhatsApp',
-  'Agentes AI que ejecutan tareas operacionales',
-  'Datos conectados y accesibles en tiempo real',
-  'Alertas inteligentes antes de que sea tarde',
-];
+import { useTranslation } from '@/i18n/context';
 
 export default function Problema() {
+  const { t, tArray } = useTranslation();
+  const pains = tArray<string>('problema.pains');
+  const solutions = tArray<string>('problema.solutions');
+
   return (
     <section className="px-6 py-28">
       <div className="mx-auto max-w-6xl">
         <ScrollReveal>
           <h2 className="font-lora text-center text-3xl font-bold text-carbon sm:text-4xl">
-            El problema que resolvemos
+            {t('problema.title')}
           </h2>
         </ScrollReveal>
 
@@ -33,11 +24,11 @@ export default function Problema() {
                 <span className="flex h-8 w-8 items-center justify-center rounded-full bg-red-100 text-sm">
                   &#10005;
                 </span>
-                Sin Ponos
+                {t('problema.withoutPonos')}
               </h3>
               <ul className="space-y-4">
-                {pains.map((p) => (
-                  <li key={p} className="flex items-start gap-3 text-warm-gray">
+                {pains.map((p, i) => (
+                  <li key={i} className="flex items-start gap-3 text-warm-gray">
                     <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-red-300" />
                     {p}
                   </li>
@@ -52,11 +43,11 @@ export default function Problema() {
                 <span className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald/10 text-sm">
                   &#10003;
                 </span>
-                Con Ponos
+                {t('problema.withPonos')}
               </h3>
               <ul className="space-y-4">
-                {solutions.map((s) => (
-                  <li key={s} className="flex items-start gap-3 text-carbon">
+                {solutions.map((s, i) => (
+                  <li key={i} className="flex items-start gap-3 text-carbon">
                     <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald" />
                     {s}
                   </li>

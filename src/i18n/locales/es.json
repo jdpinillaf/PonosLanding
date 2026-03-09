@@ -1,0 +1,186 @@
+{
+  "meta": {
+    "title": "Ponos | Consultora AI — Soluciones personalizadas para tu empresa",
+    "description": "Consultora boutique de inteligencia artificial. Conectamos AI a tus datos reales, en tus canales. Agentes operacionales, automatización financiera y más.",
+    "ogTitle": "Ponos | Soluciones AI personalizadas para tu empresa",
+    "ogDescription": "Consultora boutique de inteligencia artificial. Conectamos AI a tus datos reales, en tus canales."
+  },
+  "navbar": {
+    "services": "Servicios",
+    "demos": "Demos",
+    "howItWorks": "Cómo Funciona",
+    "successStories": "Casos de Éxito",
+    "bookConsultation": "Agendar consulta"
+  },
+  "hero": {
+    "headline": "Soluciones AI personalizadas",
+    "headlineHighlight": "para tu empresa",
+    "subtitle": "Conectamos inteligencia artificial a tus datos reales, en tus canales.",
+    "tagline": "Del caos al orden, automatizado.",
+    "ctaPrimary": "Agenda una consulta",
+    "ctaSecondary": "Ver servicios"
+  },
+  "problema": {
+    "title": "El problema que resolvemos",
+    "withoutPonos": "Sin Ponos",
+    "withPonos": "Con Ponos",
+    "pains": [
+      "Reportes manuales que toman horas cada semana",
+      "Tareas repetitivas que consumen a tu equipo",
+      "Datos desconectados entre sistemas",
+      "Información crítica que no llega a tiempo"
+    ],
+    "solutions": [
+      "Reportes automáticos entregados por WhatsApp",
+      "Agentes AI que ejecutan tareas operacionales",
+      "Datos conectados y accesibles en tiempo real",
+      "Alertas inteligentes antes de que sea tarde"
+    ]
+  },
+  "servicios": {
+    "title": "Nuestros Módulos",
+    "subtitle": "Soluciones modulares que se adaptan a las necesidades de tu empresa.",
+    "comingSoon": "Próximamente",
+    "items": [
+      {
+        "title": "Agentes Operacionales",
+        "description": "Agente conectado a tu base de datos. Reportes automáticos, alertas y briefings diarios entregados por WhatsApp."
+      },
+      {
+        "title": "Automatización Financiera",
+        "description": "Cobros, facturación y seguimiento de pagos automatizados. Menos trabajo manual, menos errores."
+      },
+      {
+        "title": "Second Brain",
+        "description": "Base de conocimiento viva para toda tu empresa. Documentación, procesos y decisiones en un solo lugar."
+      },
+      {
+        "title": "Agente de Ventas",
+        "description": "Bot conversacional AI para ventas por WhatsApp. Atiende, califica y cierra prospectos 24/7."
+      },
+      {
+        "title": "Agente de Marketing",
+        "description": "Ciclo completo de marketing automatizado. Contenido, distribución y análisis con AI."
+      }
+    ]
+  },
+  "demos": {
+    "title": "Mira cómo funciona",
+    "subtitle": "Demos reales de nuestras soluciones en acción.",
+    "whatsapp": {
+      "online": "en línea",
+      "messagePlaceholder": "Mensaje",
+      "today": "HOY"
+    },
+    "gmail": {
+      "sent": "Enviados",
+      "reply": "Responder",
+      "forward": "Reenviar",
+      "to": "para",
+      "searchMail": "Buscar en correo",
+      "billing": "Facturación"
+    },
+    "pdf": {
+      "invoice": "Factura",
+      "client": "Cliente",
+      "service": "Servicio",
+      "date": "Fecha",
+      "total": "Total",
+      "approved": "Aprobada",
+      "reject": "Rechazar",
+      "approve": "Aprobar"
+    },
+    "items": [
+      {
+        "label": "Briefing Diario",
+        "messages": [
+          { "text": "Dame el briefing de hoy" },
+          { "text": "¡Buenos días! Aquí tu resumen:\n\n📊 Facturas pendientes: 8 ($12,450 USD)\n⚠️ Cobros vencidos: 3 (hace +15 días)\n📅 Reuniones hoy: 2 (10am Logística Norte, 3pm Grupo Andino)\n✅ Tareas completadas ayer: 5/7" }
+        ]
+      },
+      {
+        "label": "Correo",
+        "messages": [
+          { "text": "Victoria, enviale un correo a carlos@logisticanorte.com solicitando el documento de garantía del equipo LN-450" },
+          { "text": "¡Listo! Correo enviado a carlos@logisticanorte.com\n\n📧 Asunto: Solicitud - Garantía equipo LN-450\n📋 Copia enviada a tu correo\n✅ Confirmación: Entregado" }
+        ],
+        "gmail": {
+          "subject": "Solicitud - Garantía equipo LN-450",
+          "body": "Estimado Carlos,\n\nPor medio del presente, le solicito amablemente el envío del documento de garantía correspondiente al equipo LN-450.\n\nQuedamos atentos a su respuesta.\n\nSaludos cordiales,\nVictoria — Ponos AI"
+        }
+      },
+      {
+        "label": "Template",
+        "messages": [
+          { "text": "Victoria, envía el template de cobro mensual a finanzas@grupoandino.com" },
+          { "text": "¡Template \"Cobro Mensual\" enviado!\n\n📧 Destinatario: finanzas@grupoandino.com\n📄 Template: Cobro Mensual - Marzo 2026\n📋 Copia enviada a tu correo\n✅ Confirmación: Entregado" }
+        ],
+        "gmail": {
+          "subject": "Cobro Mensual - Marzo 2026",
+          "body": "Estimados,\n\nAdjunto encontrarán el detalle del cobro mensual correspondiente a Marzo 2026.\n\nMonto total: $8,500 USD\nFecha límite de pago: 25 de Marzo, 2026\n\nQuedamos atentos a cualquier consulta.\n\nSaludos cordiales,\nVictoria — Ponos AI"
+        }
+      },
+      {
+        "label": "Facturación",
+        "messages": [
+          { "text": "🔔 Servicio completado detectado\nCliente: Logistica Norte\nServicio: Mantenimiento LN-450\n\n📄 Factura #0892 generada ($2,800 USD)\nPendiente de autorización" }
+        ],
+        "pdf": {
+          "client": "Logistica Norte S.A. de C.V.",
+          "service": "Mantenimiento Preventivo — Equipo LN-450",
+          "date": "8 de Marzo, 2026"
+        },
+        "sentEmails": [
+          { "subject": "Factura #0892 — Mantenimiento LN-450", "preview": "Adjunto factura por $2,800 USD..." },
+          { "subject": "Factura #0856 — Consultoría Marzo", "preview": "Adjunto factura por $5,200 USD..." },
+          { "subject": "Factura #0834 — Soporte Técnico", "preview": "Adjunto factura por $1,900 USD..." },
+          { "subject": "Factura #0821 — Implementación CRM", "preview": "Adjunto factura por $12,000 USD..." }
+        ]
+      }
+    ]
+  },
+  "comoFunciona": {
+    "title": "Cómo Funciona",
+    "steps": [
+      {
+        "title": "Diagnóstico",
+        "description": "Analizamos tus procesos, datos y canales para identificar dónde AI genera mayor impacto."
+      },
+      {
+        "title": "Implementación",
+        "description": "Construimos e integramos la solución a tus sistemas existentes. Sin migrar, sin interrumpir."
+      },
+      {
+        "title": "Resultados",
+        "description": "Tu equipo recibe reportes, alertas y automatizaciones donde ya trabaja: WhatsApp, email o tu plataforma."
+      }
+    ]
+  },
+  "casos": {
+    "title": "Casos de Éxito",
+    "items": [
+      {
+        "name": "JPRO Solutions",
+        "sector": "Servicios Financieros",
+        "quote": "Automatizamos cobros y facturación, reduciendo horas de trabajo manual cada semana."
+      },
+      {
+        "name": "Ponos",
+        "sector": "Dogfooding",
+        "quote": "Usamos nuestras propias herramientas. Nuestro Second Brain documenta todo lo que hacemos."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Transforma tu operación con AI",
+    "subtitle": "Conversemos sobre cómo AI puede simplificar los procesos de tu empresa. Sin compromiso.",
+    "button": "Agenda tu consulta gratuita"
+  },
+  "agendar": {
+    "title": "Agenda tu consulta gratuita",
+    "subtitle": "30 minutos para explorar cómo AI puede transformar tu operación."
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados."
+  }
+}

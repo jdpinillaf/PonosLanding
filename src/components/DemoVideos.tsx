@@ -1,7 +1,8 @@
 'use client';
 
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import ScrollReveal from './ScrollReveal';
+import { useTranslation } from '@/i18n/context';
 
 // --- Types ---
 
@@ -58,139 +59,129 @@ interface Demo {
   steps: Step[];
 }
 
-// --- Demo data ---
+interface DemoLocaleItem {
+  label: string;
+  messages: { text: string }[];
+  gmail?: { subject: string; body: string };
+  pdf?: { client: string; service: string; date: string };
+  sentEmails?: { subject: string; preview: string }[];
+}
 
-const demos: Demo[] = [
-  {
-    id: 'briefing',
-    label: 'Briefing Diario',
-    messages: [
-      { from: 'user', text: 'Dame el briefing de hoy', time: '8:01 AM' },
-      {
-        from: 'agent',
-        text: '\u00A1Buenos d\u00EDas! Aqu\u00ED tu resumen:\n\n\u{1F4CA} Facturas pendientes: 8 ($12,450 USD)\n\u26A0\uFE0F Cobros vencidos: 3 (hace +15 d\u00EDas)\n\u{1F4C5} Reuniones hoy: 2 (10am Log\u00EDstica Norte, 3pm Grupo Andino)\n\u2705 Tareas completadas ayer: 5/7',
-        time: '8:01 AM',
-      },
-    ],
-    steps: [
-      { at: 400, action: { type: 'typing' } },
-      { at: 1400, action: { type: 'message', index: 0 } },
-      { at: 1700, action: { type: 'typing' } },
-      { at: 2700, action: { type: 'message', index: 1 } },
-    ],
-  },
-  {
-    id: 'correo',
-    label: 'Correo',
-    messages: [
-      {
-        from: 'user',
-        text: 'Victoria, enviale un correo a carlos@logisticanorte.com solicitando el documento de garant\u00EDa del equipo LN-450',
-        time: '10:15 AM',
-      },
-      {
-        from: 'agent',
-        text: '\u00A1Listo! Correo enviado a carlos@logisticanorte.com\n\n\u{1F4E7} Asunto: Solicitud - Garant\u00EDa equipo LN-450\n\u{1F4CB} Copia enviada a tu correo\n\u2705 Confirmaci\u00F3n: Entregado',
-        time: '10:15 AM',
-      },
-    ],
-    gmail: {
-      to: 'carlos@logisticanorte.com',
-      subject: 'Solicitud - Garant\u00EDa equipo LN-450',
-      body: 'Estimado Carlos,\n\nPor medio del presente, le solicito amablemente el env\u00EDo del documento de garant\u00EDa correspondiente al equipo LN-450.\n\nQuedamos atentos a su respuesta.\n\nSaludos cordiales,\nVictoria \u2014 Ponos AI',
-      time: '10:15 AM',
+// --- Build demos from locale data ---
+
+function buildDemos(items: DemoLocaleItem[]): Demo[] {
+  return [
+    {
+      id: 'briefing',
+      label: items[0]?.label ?? '',
+      messages: [
+        { from: 'user', text: items[0]?.messages[0]?.text ?? '', time: '8:01 AM' },
+        { from: 'agent', text: items[0]?.messages[1]?.text ?? '', time: '8:01 AM' },
+      ],
+      steps: [
+        { at: 400, action: { type: 'typing' } },
+        { at: 1400, action: { type: 'message', index: 0 } },
+        { at: 1700, action: { type: 'typing' } },
+        { at: 2700, action: { type: 'message', index: 1 } },
+      ],
     },
-    steps: [
-      { at: 400, action: { type: 'typing' } },
-      { at: 1400, action: { type: 'message', index: 0 } },
-      { at: 1700, action: { type: 'typing' } },
-      { at: 2700, action: { type: 'message', index: 1 } },
-      { at: 4500, action: { type: 'screen', to: 'gmail' } },
-    ],
-  },
-  {
-    id: 'template',
-    label: 'Template',
-    messages: [
-      {
-        from: 'user',
-        text: 'Victoria, env\u00EDa el template de cobro mensual a finanzas@grupoandino.com',
-        time: '2:30 PM',
+    {
+      id: 'correo',
+      label: items[1]?.label ?? '',
+      messages: [
+        { from: 'user', text: items[1]?.messages[0]?.text ?? '', time: '10:15 AM' },
+        { from: 'agent', text: items[1]?.messages[1]?.text ?? '', time: '10:15 AM' },
+      ],
+      gmail: {
+        to: 'carlos@logisticanorte.com',
+        subject: items[1]?.gmail?.subject ?? '',
+        body: items[1]?.gmail?.body ?? '',
+        time: '10:15 AM',
       },
-      {
-        from: 'agent',
-        text: '\u00A1Template "Cobro Mensual" enviado!\n\n\u{1F4E7} Destinatario: finanzas@grupoandino.com\n\u{1F4C4} Template: Cobro Mensual - Marzo 2026\n\u{1F4CB} Copia enviada a tu correo\n\u2705 Confirmaci\u00F3n: Entregado',
+      steps: [
+        { at: 400, action: { type: 'typing' } },
+        { at: 1400, action: { type: 'message', index: 0 } },
+        { at: 1700, action: { type: 'typing' } },
+        { at: 2700, action: { type: 'message', index: 1 } },
+        { at: 4500, action: { type: 'screen', to: 'gmail' } },
+      ],
+    },
+    {
+      id: 'template',
+      label: items[2]?.label ?? '',
+      messages: [
+        { from: 'user', text: items[2]?.messages[0]?.text ?? '', time: '2:30 PM' },
+        { from: 'agent', text: items[2]?.messages[1]?.text ?? '', time: '2:31 PM' },
+      ],
+      gmail: {
+        to: 'finanzas@grupoandino.com',
+        subject: items[2]?.gmail?.subject ?? '',
+        body: items[2]?.gmail?.body ?? '',
         time: '2:31 PM',
       },
-    ],
-    gmail: {
-      to: 'finanzas@grupoandino.com',
-      subject: 'Cobro Mensual - Marzo 2026',
-      body: 'Estimados,\n\nAdjunto encontrar\u00E1n el detalle del cobro mensual correspondiente a Marzo 2026.\n\nMonto total: $8,500 USD\nFecha l\u00EDmite de pago: 25 de Marzo, 2026\n\nQuedamos atentos a cualquier consulta.\n\nSaludos cordiales,\nVictoria \u2014 Ponos AI',
-      time: '2:31 PM',
+      steps: [
+        { at: 400, action: { type: 'typing' } },
+        { at: 1400, action: { type: 'message', index: 0 } },
+        { at: 1700, action: { type: 'typing' } },
+        { at: 2700, action: { type: 'message', index: 1 } },
+        { at: 4500, action: { type: 'screen', to: 'gmail' } },
+      ],
     },
-    steps: [
-      { at: 400, action: { type: 'typing' } },
-      { at: 1400, action: { type: 'message', index: 0 } },
-      { at: 1700, action: { type: 'typing' } },
-      { at: 2700, action: { type: 'message', index: 1 } },
-      { at: 4500, action: { type: 'screen', to: 'gmail' } },
-    ],
-  },
-  {
-    id: 'facturacion',
-    label: 'Facturaci\u00F3n',
-    messages: [
-      {
-        from: 'agent',
-        text: '\u{1F514} Servicio completado detectado\nCliente: Logistica Norte\nServicio: Mantenimiento LN-450\n\n\u{1F4C4} Factura #0892 generada ($2,800 USD)\nPendiente de autorizaci\u00F3n',
-        time: '4:45 PM',
-        pdf: { name: 'Factura_0892.pdf', size: '145 KB' },
+    {
+      id: 'facturacion',
+      label: items[3]?.label ?? '',
+      messages: [
+        {
+          from: 'agent',
+          text: items[3]?.messages[0]?.text ?? '',
+          time: '4:45 PM',
+          pdf: { name: 'Factura_0892.pdf', size: '145 KB' },
+        },
+      ],
+      pdf: {
+        number: '0892',
+        client: items[3]?.pdf?.client ?? '',
+        service: items[3]?.pdf?.service ?? '',
+        amount: '$2,800.00 USD',
+        date: items[3]?.pdf?.date ?? '',
       },
-    ],
-    pdf: {
-      number: '0892',
-      client: 'Logistica Norte S.A. de C.V.',
-      service: 'Mantenimiento Preventivo \u2014 Equipo LN-450',
-      amount: '$2,800.00 USD',
-      date: '8 de Marzo, 2026',
+      sentEmails: [
+        {
+          to: 'pagos@logisticanorte.com',
+          subject: items[3]?.sentEmails?.[0]?.subject ?? '',
+          preview: items[3]?.sentEmails?.[0]?.preview ?? '',
+          time: '4:48 PM',
+          highlighted: true,
+        },
+        {
+          to: 'finanzas@grupoandino.com',
+          subject: items[3]?.sentEmails?.[1]?.subject ?? '',
+          preview: items[3]?.sentEmails?.[1]?.preview ?? '',
+          time: '1 Mar',
+        },
+        {
+          to: 'admin@transportesvalle.com',
+          subject: items[3]?.sentEmails?.[2]?.subject ?? '',
+          preview: items[3]?.sentEmails?.[2]?.preview ?? '',
+          time: '15 Feb',
+        },
+        {
+          to: 'compras@industriasmx.com',
+          subject: items[3]?.sentEmails?.[3]?.subject ?? '',
+          preview: items[3]?.sentEmails?.[3]?.preview ?? '',
+          time: '3 Feb',
+        },
+      ],
+      steps: [
+        { at: 400, action: { type: 'typing' } },
+        { at: 1400, action: { type: 'message', index: 0 } },
+        { at: 3200, action: { type: 'screen', to: 'pdf' } },
+        { at: 5200, action: { type: 'pdf-approve' } },
+        { at: 7000, action: { type: 'screen', to: 'email-list' } },
+      ],
     },
-    sentEmails: [
-      {
-        to: 'pagos@logisticanorte.com',
-        subject: 'Factura #0892 \u2014 Mantenimiento LN-450',
-        preview: 'Adjunto factura por $2,800 USD...',
-        time: '4:48 PM',
-        highlighted: true,
-      },
-      {
-        to: 'finanzas@grupoandino.com',
-        subject: 'Factura #0856 \u2014 Consultor\u00EDa Marzo',
-        preview: 'Adjunto factura por $5,200 USD...',
-        time: '1 Mar',
-      },
-      {
-        to: 'admin@transportesvalle.com',
-        subject: 'Factura #0834 \u2014 Soporte T\u00E9cnico',
-        preview: 'Adjunto factura por $1,900 USD...',
-        time: '15 Feb',
-      },
-      {
-        to: 'compras@industriasmx.com',
-        subject: 'Factura #0821 \u2014 Implementaci\u00F3n CRM',
-        preview: 'Adjunto factura por $12,000 USD...',
-        time: '3 Feb',
-      },
-    ],
-    steps: [
-      { at: 400, action: { type: 'typing' } },
-      { at: 1400, action: { type: 'message', index: 0 } },
-      { at: 3200, action: { type: 'screen', to: 'pdf' } },
-      { at: 5200, action: { type: 'pdf-approve' } },
-      { at: 7000, action: { type: 'screen', to: 'email-list' } },
-    ],
-  },
-];
+  ];
+}
 
 // --- Sub-components ---
 
@@ -259,10 +250,12 @@ function WhatsAppScreen({
   messages,
   visibleMessages,
   showTyping,
+  labels,
 }: {
   messages: Message[];
   visibleMessages: number[];
   showTyping: boolean;
+  labels: { online: string; messagePlaceholder: string; today: string };
 }) {
   return (
     <div className="flex h-full flex-col">
@@ -278,7 +271,7 @@ function WhatsAppScreen({
         </div>
         <div className="min-w-0 flex-1">
           <p className="truncate text-[14px] font-medium text-white">Victoria (Ponos AI)</p>
-          <p className="text-[11px] text-[#a8d8c8]">en línea</p>
+          <p className="text-[11px] text-[#a8d8c8]">{labels.online}</p>
         </div>
         <div className="flex gap-5 text-white/80">
           <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -301,7 +294,7 @@ function WhatsAppScreen({
         }}
       >
         <div className="mb-1 flex justify-center">
-          <span className="rounded-lg bg-[#E1F2FB] px-3 py-1 text-[11px] text-[#5F7E8A] shadow-sm">HOY</span>
+          <span className="rounded-lg bg-[#E1F2FB] px-3 py-1 text-[11px] text-[#5F7E8A] shadow-sm">{labels.today}</span>
         </div>
         {messages.map((msg, i) => (
           <ChatBubble key={i} message={msg} visible={visibleMessages.includes(i)} />
@@ -316,7 +309,7 @@ function WhatsAppScreen({
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
         </div>
-        <div className="flex-1 rounded-full bg-white px-4 py-2 text-[14px] text-[#667781]">Mensaje</div>
+        <div className="flex-1 rounded-full bg-white px-4 py-2 text-[14px] text-[#667781]">{labels.messagePlaceholder}</div>
         <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#00A884]">
           <svg className="h-5 w-5 text-white" fill="currentColor" viewBox="0 0 24 24">
             <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm-1-9c0-.55.45-1 1-1s1 .45 1 1v6c0 .55-.45 1-1 1s-1-.45-1-1V5zm6 6c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z" />
@@ -329,7 +322,7 @@ function WhatsAppScreen({
 
 // --- Gmail Screen ---
 
-function GmailScreen({ email }: { email: GmailData }) {
+function GmailScreen({ email, labels }: { email: GmailData; labels: { sent: string; reply: string; forward: string; to: string } }) {
   return (
     <div className="flex h-full flex-col bg-white">
       {/* Toolbar */}
@@ -360,7 +353,7 @@ function GmailScreen({ email }: { email: GmailData }) {
           <h3 className="flex-1 text-[16px] font-normal leading-tight text-[#202124]">{email.subject}</h3>
         </div>
         <span className="mt-1.5 inline-block rounded bg-[#ddd] px-2 py-0.5 text-[10px] font-medium text-[#5f6368]">
-          Enviados
+          {labels.sent}
         </span>
       </div>
 
@@ -374,7 +367,7 @@ function GmailScreen({ email }: { email: GmailData }) {
             <p className="text-[14px] font-medium text-[#202124]">Victoria — Ponos AI</p>
             <p className="text-[11px] text-[#5f6368]">{email.time}</p>
           </div>
-          <p className="mt-0.5 text-[12px] text-[#5f6368]">para {email.to}</p>
+          <p className="mt-0.5 text-[12px] text-[#5f6368]">{labels.to} {email.to}</p>
         </div>
       </div>
 
@@ -386,10 +379,10 @@ function GmailScreen({ email }: { email: GmailData }) {
       {/* Reply bar */}
       <div className="flex gap-2 border-t border-gray-200 px-4 py-3">
         <button className="flex-1 rounded-full border border-gray-300 py-2 text-center text-[13px] text-[#5f6368]">
-          Responder
+          {labels.reply}
         </button>
         <button className="flex-1 rounded-full border border-gray-300 py-2 text-center text-[13px] text-[#5f6368]">
-          Reenviar
+          {labels.forward}
         </button>
       </div>
     </div>
@@ -398,7 +391,7 @@ function GmailScreen({ email }: { email: GmailData }) {
 
 // --- PDF Screen ---
 
-function PdfViewerScreen({ pdf, approved }: { pdf: PdfData; approved: boolean }) {
+function PdfViewerScreen({ pdf, approved, labels }: { pdf: PdfData; approved: boolean; labels: { invoice: string; client: string; service: string; date: string; total: string; approved: string; reject: string; approve: string } }) {
   return (
     <div className="flex h-full flex-col bg-[#525659]">
       {/* Header */}
@@ -406,7 +399,7 @@ function PdfViewerScreen({ pdf, approved }: { pdf: PdfData; approved: boolean })
         <svg className="h-5 w-5 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
         </svg>
-        <p className="flex-1 truncate text-[13px] font-medium text-white">Factura_{pdf.number}.pdf</p>
+        <p className="flex-1 truncate text-[13px] font-medium text-white">{labels.invoice}_{pdf.number}.pdf</p>
         <svg className="h-5 w-5 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
         </svg>
@@ -417,25 +410,25 @@ function PdfViewerScreen({ pdf, approved }: { pdf: PdfData; approved: boolean })
         <div className="w-full max-w-[260px] rounded bg-white p-5 shadow-lg">
           {/* Invoice header */}
           <div className="border-b border-gray-200 pb-3 text-center">
-            <p className="text-[10px] font-bold uppercase tracking-widest text-[#C47B2B]">Factura</p>
+            <p className="text-[10px] font-bold uppercase tracking-widest text-[#C47B2B]">{labels.invoice}</p>
             <p className="mt-0.5 text-[18px] font-bold text-[#202124]">#{pdf.number}</p>
           </div>
           {/* Details */}
           <div className="mt-3 space-y-2 text-[11px] text-[#3c4043]">
             <div>
-              <p className="text-[9px] font-medium uppercase text-gray-400">Cliente</p>
+              <p className="text-[9px] font-medium uppercase text-gray-400">{labels.client}</p>
               <p>{pdf.client}</p>
             </div>
             <div>
-              <p className="text-[9px] font-medium uppercase text-gray-400">Servicio</p>
+              <p className="text-[9px] font-medium uppercase text-gray-400">{labels.service}</p>
               <p>{pdf.service}</p>
             </div>
             <div>
-              <p className="text-[9px] font-medium uppercase text-gray-400">Fecha</p>
+              <p className="text-[9px] font-medium uppercase text-gray-400">{labels.date}</p>
               <p>{pdf.date}</p>
             </div>
             <div className="border-t border-gray-200 pt-2">
-              <p className="text-[9px] font-medium uppercase text-gray-400">Total</p>
+              <p className="text-[9px] font-medium uppercase text-gray-400">{labels.total}</p>
               <p className="text-[16px] font-bold text-[#202124]">{pdf.amount}</p>
             </div>
           </div>
@@ -449,15 +442,15 @@ function PdfViewerScreen({ pdf, approved }: { pdf: PdfData; approved: boolean })
             <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
             </svg>
-            Aprobada
+            {labels.approved}
           </div>
         ) : (
           <div className="flex gap-3">
             <div className="flex-1 rounded-xl bg-[#5f6368] py-3 text-center text-[13px] font-medium text-white/80">
-              Rechazar
+              {labels.reject}
             </div>
             <div className="flex-1 rounded-xl bg-[#1B7A5A] py-3 text-center text-[13px] font-medium text-white">
-              Aprobar
+              {labels.approve}
             </div>
           </div>
         )}
@@ -468,7 +461,7 @@ function PdfViewerScreen({ pdf, approved }: { pdf: PdfData; approved: boolean })
 
 // --- Email List Screen ---
 
-function EmailListScreen({ emails }: { emails: SentEmail[] }) {
+function EmailListScreen({ emails, labels }: { emails: SentEmail[]; labels: { sent: string; searchMail: string; billing: string } }) {
   return (
     <div className="flex h-full flex-col bg-white">
       {/* Header */}
@@ -476,7 +469,7 @@ function EmailListScreen({ emails }: { emails: SentEmail[] }) {
         <svg className="h-5 w-5 text-[#5f6368]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
         </svg>
-        <p className="text-[16px] font-medium text-[#202124]">Enviados</p>
+        <p className="text-[16px] font-medium text-[#202124]">{labels.sent}</p>
         <div className="flex-1" />
         <svg className="h-5 w-5 text-[#5f6368]" fill="currentColor" viewBox="0 0 24 24">
           <circle cx="12" cy="6" r="2" />
@@ -491,14 +484,14 @@ function EmailListScreen({ emails }: { emails: SentEmail[] }) {
           <svg className="h-4 w-4 text-[#5f6368]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
           </svg>
-          <span className="text-[13px] text-[#5f6368]">Buscar en correo</span>
+          <span className="text-[13px] text-[#5f6368]">{labels.searchMail}</span>
         </div>
       </div>
 
       {/* Label */}
       <div className="px-4 py-1.5">
         <span className="text-[11px] font-medium uppercase tracking-wide text-[#5f6368]">
-          Facturación
+          {labels.billing}
         </span>
       </div>
 
@@ -536,6 +529,14 @@ function EmailListScreen({ emails }: { emails: SentEmail[] }) {
 // --- Main Component ---
 
 export default function DemoVideos() {
+  const { t, tArray, tObject } = useTranslation();
+  const demoItems = tArray<DemoLocaleItem>('demos.items');
+  const demos = useMemo(() => buildDemos(demoItems), [demoItems]);
+
+  const whatsappLabels = tObject<{ online: string; messagePlaceholder: string; today: string }>('demos.whatsapp');
+  const gmailLabels = tObject<{ sent: string; reply: string; forward: string; to: string; searchMail: string; billing: string }>('demos.gmail');
+  const pdfLabels = tObject<{ invoice: string; client: string; service: string; date: string; total: string; approved: string; reject: string; approve: string }>('demos.pdf');
+
   const [activeTab, setActiveTab] = useState(0);
   const [visibleMessages, setVisibleMessages] = useState<number[]>([]);
   const [showTyping, setShowTyping] = useState(false);
@@ -562,7 +563,7 @@ export default function DemoVideos() {
     setScreenKey((k) => k + 1);
 
     activeDemo.steps.forEach((step) => {
-      const t = setTimeout(() => {
+      const id = setTimeout(() => {
         switch (step.action.type) {
           case 'typing':
             setShowTyping(true);
@@ -580,9 +581,16 @@ export default function DemoVideos() {
             break;
         }
       }, step.at);
-      timersRef.current.push(t);
+      timersRef.current.push(id);
     });
-  }, [activeDemo, clearTimers]);
+
+    // Auto-advance to next demo after animation ends + 3s reading pause
+    const lastStepAt = Math.max(...activeDemo.steps.map((s) => s.at));
+    const advanceId = setTimeout(() => {
+      setActiveTab((prev) => (prev + 1) % demos.length);
+    }, lastStepAt + 3000);
+    timersRef.current.push(advanceId);
+  }, [activeDemo, demos.length, clearTimers]);
 
   useEffect(() => {
     const el = sectionRef.current;
@@ -610,14 +618,15 @@ export default function DemoVideos() {
             messages={activeDemo.messages}
             visibleMessages={visibleMessages}
             showTyping={showTyping}
+            labels={whatsappLabels}
           />
         );
       case 'gmail':
-        return activeDemo.gmail ? <GmailScreen email={activeDemo.gmail} /> : null;
+        return activeDemo.gmail ? <GmailScreen email={activeDemo.gmail} labels={gmailLabels} /> : null;
       case 'pdf':
-        return activeDemo.pdf ? <PdfViewerScreen pdf={activeDemo.pdf} approved={pdfApproved} /> : null;
+        return activeDemo.pdf ? <PdfViewerScreen pdf={activeDemo.pdf} approved={pdfApproved} labels={pdfLabels} /> : null;
       case 'email-list':
-        return activeDemo.sentEmails ? <EmailListScreen emails={activeDemo.sentEmails} /> : null;
+        return activeDemo.sentEmails ? <EmailListScreen emails={activeDemo.sentEmails} labels={gmailLabels} /> : null;
       default:
         return null;
     }
@@ -634,16 +643,20 @@ export default function DemoVideos() {
           from { transform: translateX(60px); opacity: 0; }
           to { transform: translateX(0); opacity: 1; }
         }
+        @keyframes tab-progress {
+          from { width: 0%; }
+          to { width: 100%; }
+        }
       `}</style>
 
       <section id="demos" className="px-6 py-28" ref={sectionRef}>
         <div className="mx-auto max-w-6xl">
           <ScrollReveal>
             <h2 className="font-lora text-center text-3xl font-bold text-carbon sm:text-4xl">
-              Mira cómo funciona
+              {t('demos.title')}
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-center text-warm-gray">
-              Demos reales de nuestras soluciones en acción.
+              {t('demos.subtitle')}
             </p>
           </ScrollReveal>
 
@@ -652,19 +665,35 @@ export default function DemoVideos() {
               <div className="w-full max-w-sm">
                 {/* Tabs */}
                 <div className="mb-5 flex flex-wrap justify-center gap-2 overflow-x-auto pb-1">
-                  {demos.map((demo, i) => (
-                    <button
-                      key={demo.id}
-                      onClick={() => setActiveTab(i)}
-                      className={`whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium transition-all duration-300 ${
-                        activeTab === i
-                          ? 'bg-[#075E54] text-white shadow-md'
-                          : 'bg-sand text-warm-gray hover:text-carbon'
-                      }`}
-                    >
-                      {demo.label}
-                    </button>
-                  ))}
+                  {demos.map((demo, i) => {
+                    const isActive = activeTab === i;
+                    const totalDuration = isActive
+                      ? Math.max(...demo.steps.map((s) => s.at)) + 3000
+                      : 0;
+                    return (
+                      <button
+                        key={demo.id}
+                        onClick={() => setActiveTab(i)}
+                        className={`relative whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium transition-all duration-300 overflow-hidden ${
+                          isActive
+                            ? 'bg-[#075E54] text-white shadow-md'
+                            : 'bg-sand text-warm-gray hover:text-carbon'
+                        }`}
+                      >
+                        {isActive && hasBeenVisible && (
+                          <span
+                            key={`${activeTab}-${screenKey}`}
+                            className="absolute inset-0 rounded-full bg-white/15"
+                            style={{
+                              animation: `tab-progress ${totalDuration}ms linear forwards`,
+                              transformOrigin: 'left',
+                            }}
+                          />
+                        )}
+                        <span className="relative">{demo.label}</span>
+                      </button>
+                    );
+                  })}
                 </div>
 
                 {/* Phone frame */}

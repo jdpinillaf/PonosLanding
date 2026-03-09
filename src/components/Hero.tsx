@@ -1,10 +1,12 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { useTranslation } from '@/i18n/context';
 
 export default function Hero() {
   const [loaded, setLoaded] = useState(false);
   const letters = ['P', 'O', 'N', 'O', 'S'];
+  const { t } = useTranslation();
 
   useEffect(() => {
     const timer = setTimeout(() => setLoaded(true), 100);
@@ -78,8 +80,8 @@ export default function Hero() {
             transitionDelay: '1500ms',
           }}
         >
-          Soluciones AI personalizadas{' '}
-          <span className="gradient-text">para tu empresa</span>
+          {t('hero.headline')}{' '}
+          <span className="gradient-text">{t('hero.headlineHighlight')}</span>
         </h1>
 
         <p
@@ -91,7 +93,7 @@ export default function Hero() {
             transitionDelay: '1700ms',
           }}
         >
-          Conectamos inteligencia artificial a tus datos reales, en tus canales.
+          {t('hero.subtitle')}
         </p>
 
         <p
@@ -102,7 +104,7 @@ export default function Hero() {
             transitionDelay: '1900ms',
           }}
         >
-          Del caos al orden, automatizado.
+          {t('hero.tagline')}
         </p>
 
         {/* CTA Buttons */}
@@ -116,16 +118,16 @@ export default function Hero() {
           }}
         >
           <a
-            href="#agendar"
+            href="#book"
             className="rounded-xl bg-amber px-8 py-3.5 text-base font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-amber-light hover:shadow-lg hover:shadow-amber/20"
           >
-            Agenda una consulta
+            {t('hero.ctaPrimary')}
           </a>
           <a
-            href="#servicios"
+            href="#services"
             className="rounded-xl border border-sand px-8 py-3.5 text-base font-semibold text-carbon transition-all duration-300 hover:-translate-y-0.5 hover:border-amber hover:text-amber"
           >
-            Ver servicios
+            {t('hero.ctaSecondary')}
           </a>
         </div>
       </div>

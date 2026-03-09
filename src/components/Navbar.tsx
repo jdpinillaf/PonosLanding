@@ -1,26 +1,30 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useTranslation } from '@/i18n/context';
+import LanguageSwitcher from './LanguageSwitcher';
 
-const links = [
-  { label: 'Servicios', href: '#servicios' },
-  { label: 'Demos', href: '#demos' },
-  { label: 'Cómo Funciona', href: '#como-funciona' },
-  { label: 'Casos de Éxito', href: '#casos' },
+const linkKeys = [
+  { key: 'navbar.services', href: '#services' },
+  { key: 'navbar.demos', href: '#demos' },
+  { key: 'navbar.howItWorks', href: '#how-it-works' },
+  { key: 'navbar.successStories', href: '#success-stories' },
 ];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('');
+  const { t } = useTranslation();
 
   useEffect(() => {
+    const sectionIds = linkKeys.map((l) => l.href.slice(1));
+
     const onScroll = () => {
       setScrolled(window.scrollY > 50);
 
-      const sections = links.map((l) => l.href.slice(1));
       let current = '';
-      for (const id of sections) {
+      for (const id of sectionIds) {
         const el = document.getElementById(id);
         if (el) {
           const rect = el.getBoundingClientRect();
@@ -54,7 +58,7 @@ export default function Navbar() {
 
         {/* Desktop */}
         <div className="hidden items-center gap-8 md:flex">
-          {links.map((l) => (
+          {linkKeys.map((l) => (
             <a
               key={l.href}
               href={l.href}
@@ -64,17 +68,18 @@ export default function Navbar() {
                   : 'text-warm-gray hover:text-carbon'
               }`}
             >
-              {l.label}
+              {t(l.key)}
               {activeSection === l.href.slice(1) && (
                 <span className="absolute -bottom-1 left-0 right-0 h-[1.5px] rounded-full bg-amber" />
               )}
             </a>
           ))}
+          <LanguageSwitcher />
           <a
-            href="#agendar"
+            href="#book"
             className="rounded-xl bg-amber px-5 py-2.5 text-sm font-medium text-white transition-all duration-300 hover:bg-amber-light hover:shadow-md hover:shadow-amber/20 hover:-translate-y-0.5"
           >
-            Agendar consulta
+            {t('navbar.bookConsultation')}
           </a>
         </div>
 
@@ -112,11 +117,11 @@ export default function Navbar() {
       {/* Mobile menu */}
       <div
         className={`overflow-hidden transition-all duration-300 md:hidden ${
-          open ? 'max-h-72 opacity-100' : 'max-h-0 opacity-0'
+          open ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
         <div className="border-t border-sand/50 bg-parchment/95 px-6 pb-4 backdrop-blur-xl">
-          {links.map((l) => (
+          {linkKeys.map((l) => (
             <a
               key={l.href}
               href={l.href}
@@ -127,16 +132,19 @@ export default function Navbar() {
                   : 'text-warm-gray hover:text-amber'
               }`}
             >
-              {l.label}
+              {t(l.key)}
             </a>
           ))}
-          <a
-            href="#agendar"
-            onClick={() => setOpen(false)}
-            className="mt-2 inline-block rounded-xl bg-amber px-5 py-2.5 text-sm font-medium text-white"
-          >
-            Agendar consulta
-          </a>
+          <div className="flex items-center gap-4 pt-2">
+            <a
+              href="#book"
+              onClick={() => setOpen(false)}
+              className="inline-block rounded-xl bg-amber px-5 py-2.5 text-sm font-medium text-white"
+            >
+              {t('navbar.bookConsultation')}
+            </a>
+            <LanguageSwitcher />
+          </div>
         </div>
       </div>
     </nav>

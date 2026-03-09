@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Lora, Work_Sans } from 'next/font/google';
 import CustomCursor from '@/components/CustomCursor';
+import Providers from '@/components/Providers';
 import './globals.css';
 
 const lora = Lora({
@@ -16,32 +17,32 @@ const workSans = Work_Sans({
 });
 
 export const metadata: Metadata = {
-  title: 'Ponos | Consultora AI — Soluciones personalizadas para tu empresa',
+  title: 'Ponos | AI Consulting — Custom solutions for your business',
   description:
-    'Consultora boutique de inteligencia artificial. Conectamos AI a tus datos reales, en tus canales. Agentes operacionales, automatización financiera y más.',
+    'Boutique AI consulting firm. We connect AI to your real data, on your channels. Operational agents, financial automation, and more.',
   keywords: [
     'AI',
-    'inteligencia artificial',
-    'consultora',
-    'automatizacion',
+    'artificial intelligence',
+    'consulting',
+    'automation',
     'WhatsApp',
-    'agentes AI',
+    'AI agents',
     'LATAM',
   ],
   openGraph: {
-    title: 'Ponos | Soluciones AI personalizadas para tu empresa',
+    title: 'Ponos | Custom AI solutions for your business',
     description:
-      'Consultora boutique de inteligencia artificial. Conectamos AI a tus datos reales, en tus canales.',
+      'Boutique AI consulting firm. We connect AI to your real data, on your channels.',
     type: 'website',
-    locale: 'es_MX',
+    locale: 'en_US',
     siteName: 'Ponos',
     url: 'https://ponos.com.co',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Ponos | Soluciones AI personalizadas para tu empresa',
+    title: 'Ponos | Custom AI solutions for your business',
     description:
-      'Consultora boutique de inteligencia artificial. Conectamos AI a tus datos reales, en tus canales.',
+      'Boutique AI consulting firm. We connect AI to your real data, on your channels.',
   },
 };
 
@@ -51,12 +52,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="es">
+    <html lang="en">
       <body
         className={`${lora.variable} ${workSans.variable} font-work-sans bg-parchment text-soft-black antialiased`}
       >
-        <CustomCursor />
-        {children}
+        <Providers>
+          <CustomCursor />
+          {children}
+        </Providers>
       </body>
     </html>
   );

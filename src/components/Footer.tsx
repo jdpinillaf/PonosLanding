@@ -1,4 +1,10 @@
+'use client';
+
+import { useTranslation } from '@/i18n/context';
+
 export default function Footer() {
+  const { t } = useTranslation();
+
   return (
     <footer className="border-t border-sand px-6 py-10">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 sm:flex-row">
@@ -11,8 +17,7 @@ export default function Footer() {
           </span>
         </div>
         <p className="text-sm text-warm-gray">
-          &copy; {new Date().getFullYear()} Ponos. Todos los derechos
-          reservados.
+          &copy; {new Date().getFullYear()} Ponos. {t('footer.rights')}
         </p>
         <div className="flex gap-6">
           <a

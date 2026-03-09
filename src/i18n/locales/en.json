@@ -1,0 +1,186 @@
+{
+  "meta": {
+    "title": "Ponos | AI Consulting — Custom solutions for your business",
+    "description": "Boutique AI consulting firm. We connect AI to your real data, on your channels. Operational agents, financial automation, and more.",
+    "ogTitle": "Ponos | Custom AI solutions for your business",
+    "ogDescription": "Boutique AI consulting firm. We connect AI to your real data, on your channels."
+  },
+  "navbar": {
+    "services": "Services",
+    "demos": "Demos",
+    "howItWorks": "How It Works",
+    "successStories": "Success Stories",
+    "bookConsultation": "Book a consultation"
+  },
+  "hero": {
+    "headline": "Custom AI solutions",
+    "headlineHighlight": "for your business",
+    "subtitle": "We connect artificial intelligence to your real data, on your channels.",
+    "tagline": "From chaos to order, automated.",
+    "ctaPrimary": "Book a consultation",
+    "ctaSecondary": "View services"
+  },
+  "problema": {
+    "title": "The problem we solve",
+    "withoutPonos": "Without Ponos",
+    "withPonos": "With Ponos",
+    "pains": [
+      "Manual reports that take hours every week",
+      "Repetitive tasks draining your team",
+      "Disconnected data across systems",
+      "Critical information that doesn't arrive on time"
+    ],
+    "solutions": [
+      "Automatic reports delivered via WhatsApp",
+      "AI agents that execute operational tasks",
+      "Connected data accessible in real time",
+      "Smart alerts before it's too late"
+    ]
+  },
+  "servicios": {
+    "title": "Our Modules",
+    "subtitle": "Modular solutions that adapt to your company's needs.",
+    "comingSoon": "Coming Soon",
+    "items": [
+      {
+        "title": "Operational Agents",
+        "description": "Agent connected to your database. Automatic reports, alerts, and daily briefings delivered via WhatsApp."
+      },
+      {
+        "title": "Financial Automation",
+        "description": "Collections, invoicing, and payment tracking automated. Less manual work, fewer errors."
+      },
+      {
+        "title": "Second Brain",
+        "description": "A living knowledge base for your entire company. Documentation, processes, and decisions in one place."
+      },
+      {
+        "title": "Sales Agent",
+        "description": "AI conversational bot for WhatsApp sales. Engages, qualifies, and closes prospects 24/7."
+      },
+      {
+        "title": "Marketing Agent",
+        "description": "Complete automated marketing cycle. Content, distribution, and analytics powered by AI."
+      }
+    ]
+  },
+  "demos": {
+    "title": "See how it works",
+    "subtitle": "Real demos of our solutions in action.",
+    "whatsapp": {
+      "online": "online",
+      "messagePlaceholder": "Message",
+      "today": "TODAY"
+    },
+    "gmail": {
+      "sent": "Sent",
+      "reply": "Reply",
+      "forward": "Forward",
+      "to": "to",
+      "searchMail": "Search mail",
+      "billing": "Billing"
+    },
+    "pdf": {
+      "invoice": "Invoice",
+      "client": "Client",
+      "service": "Service",
+      "date": "Date",
+      "total": "Total",
+      "approved": "Approved",
+      "reject": "Reject",
+      "approve": "Approve"
+    },
+    "items": [
+      {
+        "label": "Daily Briefing",
+        "messages": [
+          { "text": "Give me today's briefing" },
+          { "text": "Good morning! Here's your summary:\n\n📊 Pending invoices: 8 ($12,450 USD)\n⚠️ Overdue collections: 3 (15+ days ago)\n📅 Meetings today: 2 (10am Logística Norte, 3pm Grupo Andino)\n✅ Tasks completed yesterday: 5/7" }
+        ]
+      },
+      {
+        "label": "Email",
+        "messages": [
+          { "text": "Victoria, send an email to carlos@logisticanorte.com requesting the warranty document for equipment LN-450" },
+          { "text": "Done! Email sent to carlos@logisticanorte.com\n\n📧 Subject: Request - Warranty for equipment LN-450\n📋 Copy sent to your email\n✅ Confirmation: Delivered" }
+        ],
+        "gmail": {
+          "subject": "Request - Warranty for equipment LN-450",
+          "body": "Dear Carlos,\n\nI am writing to kindly request the warranty document for equipment LN-450.\n\nWe look forward to your response.\n\nBest regards,\nVictoria — Ponos AI"
+        }
+      },
+      {
+        "label": "Template",
+        "messages": [
+          { "text": "Victoria, send the monthly billing template to finanzas@grupoandino.com" },
+          { "text": "Template \"Monthly Billing\" sent!\n\n📧 Recipient: finanzas@grupoandino.com\n📄 Template: Monthly Billing - March 2026\n📋 Copy sent to your email\n✅ Confirmation: Delivered" }
+        ],
+        "gmail": {
+          "subject": "Monthly Billing - March 2026",
+          "body": "Dear team,\n\nPlease find attached the monthly billing details for March 2026.\n\nTotal amount: $8,500 USD\nPayment deadline: March 25, 2026\n\nPlease don't hesitate to reach out with any questions.\n\nBest regards,\nVictoria — Ponos AI"
+        }
+      },
+      {
+        "label": "Invoicing",
+        "messages": [
+          { "text": "🔔 Completed service detected\nClient: Logistica Norte\nService: Maintenance LN-450\n\n📄 Invoice #0892 generated ($2,800 USD)\nPending authorization" }
+        ],
+        "pdf": {
+          "client": "Logistica Norte S.A. de C.V.",
+          "service": "Preventive Maintenance — Equipment LN-450",
+          "date": "March 8, 2026"
+        },
+        "sentEmails": [
+          { "subject": "Invoice #0892 — Maintenance LN-450", "preview": "Attached invoice for $2,800 USD..." },
+          { "subject": "Invoice #0856 — March Consulting", "preview": "Attached invoice for $5,200 USD..." },
+          { "subject": "Invoice #0834 — Technical Support", "preview": "Attached invoice for $1,900 USD..." },
+          { "subject": "Invoice #0821 — CRM Implementation", "preview": "Attached invoice for $12,000 USD..." }
+        ]
+      }
+    ]
+  },
+  "comoFunciona": {
+    "title": "How It Works",
+    "steps": [
+      {
+        "title": "Diagnosis",
+        "description": "We analyze your processes, data, and channels to identify where AI generates the greatest impact."
+      },
+      {
+        "title": "Implementation",
+        "description": "We build and integrate the solution into your existing systems. No migration, no disruption."
+      },
+      {
+        "title": "Results",
+        "description": "Your team receives reports, alerts, and automations where they already work: WhatsApp, email, or your platform."
+      }
+    ]
+  },
+  "casos": {
+    "title": "Success Stories",
+    "items": [
+      {
+        "name": "JPRO Solutions",
+        "sector": "Financial Services",
+        "quote": "We automated collections and invoicing, reducing hours of manual work every week."
+      },
+      {
+        "name": "Ponos",
+        "sector": "Dogfooding",
+        "quote": "We use our own tools. Our Second Brain documents everything we do."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Transform your operations with AI",
+    "subtitle": "Let's discuss how AI can simplify your company's processes. No commitment.",
+    "button": "Book your free consultation"
+  },
+  "agendar": {
+    "title": "Book your free consultation",
+    "subtitle": "30 minutes to explore how AI can transform your operations."
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  }
+}

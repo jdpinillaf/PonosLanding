@@ -1,35 +1,24 @@
 'use client';
 
 import ScrollReveal from './ScrollReveal';
-
-const casos = [
-  {
-    name: 'JPRO Solutions',
-    sector: 'Servicios Financieros',
-    quote:
-      'Automatizamos cobros y facturación, reduciendo horas de trabajo manual cada semana.',
-  },
-  {
-    name: 'Ponos',
-    sector: 'Dogfooding',
-    quote:
-      'Usamos nuestras propias herramientas. Nuestro Second Brain documenta todo lo que hacemos.',
-  },
-];
+import { useTranslation } from '@/i18n/context';
 
 export default function CasosExito() {
+  const { t, tArray } = useTranslation();
+  const casos = tArray<{ name: string; sector: string; quote: string }>('casos.items');
+
   return (
-    <section id="casos" className="px-6 py-28">
+    <section id="success-stories" className="px-6 py-28">
       <div className="mx-auto max-w-6xl">
         <ScrollReveal>
           <h2 className="font-lora text-center text-3xl font-bold text-carbon sm:text-4xl">
-            Casos de Éxito
+            {t('casos.title')}
           </h2>
         </ScrollReveal>
 
         <div className="mt-16 grid gap-8 md:grid-cols-2">
           {casos.map((c, i) => (
-            <ScrollReveal key={c.name} delay={i * 150}>
+            <ScrollReveal key={i} delay={i * 150}>
               <div className="group rounded-2xl border border-sand bg-white/50 p-8 transition-all duration-300 hover:border-amber/20 hover:shadow-lg hover:shadow-amber/5">
                 <div className="mb-4 font-lora text-4xl leading-none text-amber/30">
                   &ldquo;
