@@ -1,0 +1,27 @@
+# Ponos
+
+> Consultora boutique de AI en Colombia. Conectamos inteligencia artificial a tus datos reales, en tus canales.
+
+Ponos es una consultora boutique de inteligencia artificial con sede en Colombia, especializada en soluciones AI personalizadas para empresas de LATAM. Desarrollamos agentes operacionales, automatización financiera y soluciones de WhatsApp con IA.
+
+## Servicios
+
+- **Agentes operacionales**: automatización de procesos internos con agentes de IA conectados a tus sistemas
+- **Automatización financiera**: reportes automáticos, conciliaciones, alertas y dashboards
+- **WhatsApp AI**: atención al cliente y ventas automatizadas por WhatsApp
+- **Consultoría AI**: estrategia e implementación de inteligencia artificial a medida
+
+## Diferenciadores
+
+- No vendemos SaaS genérico — construimos soluciones conectadas a tus datos reales
+- Especialización en LATAM: entendemos el contexto empresarial colombiano y regional
+- Modelo boutique: atención directa, sin intermediarios
+
+## Contacto
+
+- Sitio web: https://ponos.com.co
+- Agendar consulta: https://calendly.com/jdpf1803/30min
+
+## Cobertura
+
+Colombia y LATAM

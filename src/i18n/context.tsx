@@ -29,7 +29,6 @@ const I18nContext = createContext<I18nContextValue | null>(null);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [locale, setLocaleState] = useState<Locale>('en');
-  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     const saved = localStorage.getItem('lang') as Locale | null;
@@ -41,7 +40,6 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
       setLocaleState(browserLang);
       document.documentElement.lang = browserLang;
     }
-    setMounted(true);
   }, []);
 
   const setLocale = useCallback((l: Locale) => {
@@ -73,8 +71,6 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     },
     [locale]
   );
-
-  if (!mounted) return null;
 
   return (
     <I18nContext.Provider value={{ locale, setLocale, t, tArray, tObject }}>

@@ -1,21 +1,11 @@
 'use client';
 
-import { useEffect } from 'react';
+import Script from 'next/script';
 import ScrollReveal from './ScrollReveal';
 import { useTranslation } from '@/i18n/context';
 
 export default function Agendar() {
   const { t } = useTranslation();
-
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://assets.calendly.com/assets/external/widget.js';
-    script.async = true;
-    document.body.appendChild(script);
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
 
   return (
     <section id="book" className="bg-sand/50 px-6 py-28">
@@ -38,6 +28,10 @@ export default function Agendar() {
           </div>
         </ScrollReveal>
       </div>
+      <Script
+        src="https://assets.calendly.com/assets/external/widget.js"
+        strategy="lazyOnload"
+      />
     </section>
   );
 }
