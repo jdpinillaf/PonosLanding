@@ -1,9 +1,9 @@
 {
   "meta": {
-    "title": "Ponos | AI Consulting for LATAM — Agents and Automation",
-    "description": "Boutique AI consulting firm in Colombia. We connect artificial intelligence to your real data. Operational agents, financial automation, WhatsApp.",
-    "ogTitle": "Ponos | Custom AI solutions for LATAM businesses",
-    "ogDescription": "Boutique AI consulting firm in Colombia. We connect artificial intelligence to your real data. Operational agents, financial automation, WhatsApp."
+    "title": "Ponos | AI-Powered Operations for Service Companies",
+    "description": "We automate invoicing, dispatch, scheduling, and reporting for service companies with AI connected to your real data.",
+    "ogTitle": "Ponos | AI-Powered Operations for Service Companies",
+    "ogDescription": "We automate invoicing, dispatch, scheduling, and reporting for service companies with AI connected to your real data."
   },
   "navbar": {
     "services": "Services",
@@ -13,9 +13,9 @@
     "bookConsultation": "Book a consultation"
   },
   "hero": {
-    "headline": "Custom AI solutions",
-    "headlineHighlight": "for your business",
-    "subtitle": "We connect artificial intelligence to your real data, on your channels.",
+    "headline": "AI-powered operations",
+    "headlineHighlight": "for service companies",
+    "subtitle": "We automate invoicing, dispatch, scheduling, and reporting — connected to your real data.",
     "tagline": "From chaos to order, automated.",
     "ctaPrimary": "Book a consultation",
     "ctaSecondary": "View services"
@@ -38,29 +38,29 @@
     ]
   },
   "servicios": {
-    "title": "Our Modules",
-    "subtitle": "Modular solutions that adapt to your company's needs.",
+    "title": "What We Automate",
+    "subtitle": "AI-powered operations tailored to your service company.",
     "comingSoon": "Coming Soon",
     "items": [
       {
-        "title": "Operational Agents",
-        "description": "Agent connected to your database. Automatic reports, alerts, and daily briefings delivered via WhatsApp."
+        "title": "Invoicing & Billing",
+        "description": "End-to-end invoicing automation. Job completion triggers invoice generation, PDF creation, and client delivery. Zero manual work."
       },
       {
-        "title": "Financial Automation",
-        "description": "Collections, invoicing, and payment tracking automated. Less manual work, fewer errors."
+        "title": "Dispatch & Scheduling",
+        "description": "Automatic technician assignment by proximity. Smart scheduling based on location, availability, and job type."
       },
       {
-        "title": "Second Brain",
-        "description": "A living knowledge base for your entire company. Documentation, processes, and decisions in one place."
+        "title": "Reporting & Alerts",
+        "description": "Daily briefings, overdue payment alerts, and operational reports delivered via WhatsApp or email. Data from your systems, in real time."
       },
       {
-        "title": "Sales Agent",
-        "description": "AI conversational bot for WhatsApp sales. Engages, qualifies, and closes prospects 24/7."
+        "title": "WhatsApp Operations",
+        "description": "AI agent on WhatsApp connected to your database. Your team queries data, sends emails, and manages operations from their phone."
       },
       {
-        "title": "Marketing Agent",
-        "description": "Complete automated marketing cycle. Content, distribution, and analytics powered by AI."
+        "title": "Custom Integrations",
+        "description": "Connect your existing tools — Service Fusion, QuickBooks, CRMs, ERPs — into one automated workflow."
       }
     ]
   },

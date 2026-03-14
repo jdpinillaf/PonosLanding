@@ -19,20 +19,20 @@ const workSans = Work_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://ponos.com.co'),
-  title: 'Ponos | AI Consulting para LATAM — Agentes y Automatización',
+  title: 'Ponos | AI-Powered Operations for Service Companies',
   description:
-    'Consultora boutique de AI en Colombia. Conectamos inteligencia artificial a tus datos reales. Agentes operacionales, automatización financiera, WhatsApp.',
+    'We automate invoicing, dispatch, scheduling, and reporting for service companies with AI connected to your real data.',
   keywords: [
-    'AI',
-    'artificial intelligence',
-    'consulting',
-    'automation',
-    'WhatsApp',
+    'AI operations',
+    'service company automation',
+    'AI dispatch',
+    'invoicing automation',
+    'HVAC automation',
+    'field service AI',
+    'WhatsApp operations',
     'AI agents',
-    'LATAM',
-    'Colombia',
-    'agentes operacionales',
-    'automatización financiera',
+    'service companies',
+    'business process automation',
   ],
   alternates: {
     canonical: 'https://ponos.com.co',
@@ -46,9 +46,9 @@ export const metadata: Metadata = {
     shortcut: '/logo-ponos-small.png',
   },
   openGraph: {
-    title: 'Ponos | Soluciones AI personalizadas para empresas de LATAM',
+    title: 'Ponos | AI-Powered Operations for Service Companies',
     description:
-      'Consultora boutique de AI en Colombia. Conectamos inteligencia artificial a tus datos reales. Agentes operacionales, automatización financiera, WhatsApp.',
+      'We automate invoicing, dispatch, scheduling, and reporting for service companies with AI connected to your real data.',
     type: 'website',
     locale: 'es_CO',
     siteName: 'Ponos',
@@ -58,15 +58,15 @@ export const metadata: Metadata = {
         url: '/logo-ponos.png',
         width: 1200,
         height: 630,
-        alt: 'Ponos — AI Consulting LATAM',
+        alt: 'Ponos — AI Operations for Service Companies',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Ponos | Soluciones AI personalizadas para empresas de LATAM',
+    title: 'Ponos | AI-Powered Operations for Service Companies',
     description:
-      'Consultora boutique de AI en Colombia. Conectamos inteligencia artificial a tus datos reales.',
+      'We automate invoicing, dispatch, scheduling, and reporting for service companies with AI connected to your real data.',
     images: ['/logo-ponos.png'],
   },
 };

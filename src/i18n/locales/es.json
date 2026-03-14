@@ -1,9 +1,9 @@
 {
   "meta": {
-    "title": "Ponos | AI Consulting para LATAM — Agentes y Automatización",
-    "description": "Consultora boutique de AI en Colombia. Conectamos inteligencia artificial a tus datos reales. Agentes operacionales, automatización financiera, WhatsApp.",
-    "ogTitle": "Ponos | Soluciones AI personalizadas para empresas de LATAM",
-    "ogDescription": "Consultora boutique de AI en Colombia. Conectamos inteligencia artificial a tus datos reales. Agentes operacionales, automatización financiera, WhatsApp."
+    "title": "Ponos | Operaciones impulsadas por IA para empresas de servicios",
+    "description": "Automatizamos facturación, despacho, scheduling y reportes para empresas de servicios con IA conectada a tus datos reales.",
+    "ogTitle": "Ponos | Operaciones impulsadas por IA para empresas de servicios",
+    "ogDescription": "Automatizamos facturación, despacho, scheduling y reportes para empresas de servicios con IA conectada a tus datos reales."
   },
   "navbar": {
     "services": "Servicios",
@@ -13,9 +13,9 @@
     "bookConsultation": "Agendar consulta"
   },
   "hero": {
-    "headline": "Soluciones AI personalizadas",
-    "headlineHighlight": "para tu empresa",
-    "subtitle": "Conectamos inteligencia artificial a tus datos reales, en tus canales.",
+    "headline": "Operaciones impulsadas por IA",
+    "headlineHighlight": "para empresas de servicios",
+    "subtitle": "Automatizamos facturación, despacho, scheduling y reportes — conectados a tus datos reales.",
     "tagline": "Del caos al orden, automatizado.",
     "ctaPrimary": "Agenda una consulta",
     "ctaSecondary": "Ver servicios"
@@ -38,29 +38,29 @@
     ]
   },
   "servicios": {
-    "title": "Nuestros Módulos",
-    "subtitle": "Soluciones modulares que se adaptan a las necesidades de tu empresa.",
+    "title": "Qué Automatizamos",
+    "subtitle": "Operaciones impulsadas por IA diseñadas para tu empresa de servicios.",
     "comingSoon": "Próximamente",
     "items": [
       {
-        "title": "Agentes Operacionales",
-        "description": "Agente conectado a tu base de datos. Reportes automáticos, alertas y briefings diarios entregados por WhatsApp."
+        "title": "Facturación y Cobros",
+        "description": "Automatización de facturación de punta a punta. El servicio completado genera factura, PDF y envío al cliente. Cero trabajo manual."
       },
       {
-        "title": "Automatización Financiera",
-        "description": "Cobros, facturación y seguimiento de pagos automatizados. Menos trabajo manual, menos errores."
+        "title": "Despacho y Scheduling",
+        "description": "Asignación automática de técnicos por proximidad. Scheduling inteligente basado en ubicación, disponibilidad y tipo de trabajo."
       },
       {
-        "title": "Second Brain",
-        "description": "Base de conocimiento viva para toda tu empresa. Documentación, procesos y decisiones en un solo lugar."
+        "title": "Reportes y Alertas",
+        "description": "Briefings diarios, alertas de pagos vencidos y reportes operacionales entregados por WhatsApp o email. Datos de tus sistemas, en tiempo real."
       },
       {
-        "title": "Agente de Ventas",
-        "description": "Bot conversacional AI para ventas por WhatsApp. Atiende, califica y cierra prospectos 24/7."
+        "title": "Operaciones por WhatsApp",
+        "description": "Agente AI en WhatsApp conectado a tu base de datos. Tu equipo consulta datos, envía correos y gestiona operaciones desde el celular."
       },
       {
-        "title": "Agente de Marketing",
-        "description": "Ciclo completo de marketing automatizado. Contenido, distribución y análisis con AI."
+        "title": "Integraciones Custom",
+        "description": "Conectamos tus herramientas existentes — Service Fusion, QuickBooks, CRMs, ERPs — en un flujo de trabajo automatizado."
       }
     ]
   },

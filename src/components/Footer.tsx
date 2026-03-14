@@ -13,7 +13,7 @@ export default function Footer() {
             PONOS
           </span>
           <span className="text-[0.5rem] tracking-[0.3em] text-warm-gray">
-            AI CONSULTING
+            AI OPERATIONS
           </span>
         </div>
         <p className="text-sm text-warm-gray">

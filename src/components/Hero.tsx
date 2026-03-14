@@ -66,7 +66,7 @@ export default function Hero() {
               transitionDelay: '1300ms',
             }}
           >
-            AI CONSULTING
+            AI OPERATIONS
           </p>
         </div>
 

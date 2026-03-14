@@ -52,7 +52,7 @@ export default function Navbar() {
             PONOS
           </span>
           <span className="text-[0.55rem] font-medium tracking-[0.3em] text-warm-gray">
-            AI CONSULTING
+            AI OPERATIONS
           </span>
         </a>
 

@@ -9,8 +9,8 @@ export default function SchemaOrg() {
         url: 'https://ponos.com.co',
         logo: 'https://ponos.com.co/logo-ponos.png',
         description:
-          'Consultora boutique de AI en Colombia. Conectamos inteligencia artificial a tus datos reales.',
-        areaServed: ['CO', 'LATAM'],
+          'AI-powered operations for service companies. We automate invoicing, dispatch, scheduling, and reporting connected to your real data.',
+        areaServed: ['US', 'CO', 'LATAM'],
         knowsLanguage: ['es', 'en'],
       },
       {
