@@ -23,6 +23,23 @@ export default function CTAFinal() {
           >
             {t('cta.button')}
           </a>
+          <div className="relative mt-5 flex flex-wrap items-center justify-center gap-3">
+            {[
+              t('frictionBadges.free'),
+              t('frictionBadges.thirtyMin'),
+              t('frictionBadges.noCommitment'),
+            ].map((badge) => (
+              <span
+                key={badge}
+                className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-parchment/80"
+              >
+                <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                </svg>
+                {badge}
+              </span>
+            ))}
+          </div>
         </div>
       </ScrollReveal>
     </section>

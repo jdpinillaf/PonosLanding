@@ -19,7 +19,7 @@ export default function CasosExito() {
         <div className="mt-16 grid gap-8 md:grid-cols-2">
           {casos.map((c, i) => (
             <ScrollReveal key={i} delay={i * 150}>
-              <div className="group rounded-2xl border border-sand bg-white/50 p-8 transition-all duration-300 hover:border-amber/20 hover:shadow-lg hover:shadow-amber/5">
+              <div className="group rounded-2xl border border-sand bg-white/50 p-8 hover:scale-[1.02] hover:border-amber/20 hover:shadow-lg hover:shadow-amber/5" style={{ transition: 'all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)' }}>
                 <div className="mb-4 font-lora text-4xl leading-none text-amber/30">
                   &ldquo;
                 </div>

@@ -20,6 +20,14 @@
     "ctaPrimary": "Agenda una consulta",
     "ctaSecondary": "Ver servicios"
   },
+  "frictionBadges": {
+    "freeConsultation": "Consulta gratuita",
+    "noCommitment": "Sin compromiso",
+    "resultsIn1Week": "Resultados en 1 semana",
+    "tryNow": "Prueba la experiencia — sin registrarte",
+    "thirtyMin": "30 min",
+    "free": "Gratis"
+  },
   "problema": {
     "title": "El problema que resolvemos",
     "withoutPonos": "Sin Ponos",
@@ -35,6 +43,16 @@
       "Agentes AI que ejecutan tareas operacionales",
       "Datos conectados y accesibles en tiempo real",
       "Alertas inteligentes antes de que sea tarde"
+    ]
+  },
+  "impactStats": {
+    "title": "Resultados reales",
+    "subtitle": "El impacto de automatizar operaciones con IA.",
+    "items": [
+      { "value": "85%", "number": 85, "suffix": "%", "label": "Reducción en tiempo de facturación" },
+      { "value": "10x", "number": 10, "suffix": "x", "label": "Más rápido en reportes" },
+      { "value": "3hrs", "number": 3, "suffix": "hrs", "label": "Ahorradas por día" },
+      { "value": "98%", "number": 98, "suffix": "%", "label": "Tasa de entrega de alertas" }
     ]
   },
   "servicios": {
@@ -66,10 +84,15 @@
   },
   "demos": {
     "title": "Mira cómo funciona",
-    "subtitle": "Demos reales de nuestras soluciones en acción.",
+    "subtitle": "Demos interactivos de nuestras soluciones. Haz click para probar.",
+    "followUpLabels": {
+      "viewEmail": "Ver correo enviado →",
+      "viewInvoice": "Ver factura →",
+      "viewSentEmails": "Ver correos enviados →"
+    },
     "whatsapp": {
       "online": "en línea",
-      "messagePlaceholder": "Mensaje",
+      "messagePlaceholder": "Elige una opción...",
       "today": "HOY"
     },
     "gmail": {
@@ -93,16 +116,37 @@
     "items": [
       {
         "label": "Briefing Diario",
-        "messages": [
-          { "text": "Dame el briefing de hoy" },
-          { "text": "¡Buenos días! Aquí tu resumen:\n\n📊 Facturas pendientes: 8 ($12,450 USD)\n⚠️ Cobros vencidos: 3 (hace +15 días)\n📅 Reuniones hoy: 2 (10am Logística Norte, 3pm Grupo Andino)\n✅ Tareas completadas ayer: 5/7" }
+        "prompts": [
+          {
+            "chip": "Briefing de hoy",
+            "userMsg": "Dame el briefing de hoy",
+            "aiMsg": "¡Buenos días! Aquí tu resumen:\n\n📊 Facturas pendientes: 8 ($12,450 USD)\n⚠️ Cobros vencidos: 3 (hace +15 días)\n📅 Reuniones hoy: 2 (10am Logística Norte, 3pm Grupo Andino)\n✅ Tareas completadas ayer: 5/7"
+          },
+          {
+            "chip": "Facturas pendientes?",
+            "userMsg": "¿Cuántas facturas pendientes tengo?",
+            "aiMsg": "Tienes 8 facturas pendientes por $12,450 USD:\n\n1. Logística Norte — $2,800 (vence hoy)\n2. Grupo Andino — $5,200 (3 días)\n3. Transportes Valle — $1,900 (vencida 5d)\n4. Industrias MX — $2,550 (7 días)"
+          },
+          {
+            "chip": "Reuniones de hoy",
+            "userMsg": "¿Qué reuniones tengo hoy?",
+            "aiMsg": "Hoy tienes 2 reuniones:\n\n📅 10:00 AM — Logística Norte\nTema: Revisión contrato Q2\n\n📅 3:00 PM — Grupo Andino\nTema: Onboarding nuevo equipo"
+          }
         ]
       },
       {
         "label": "Correo",
-        "messages": [
-          { "text": "Victoria, enviale un correo a carlos@logisticanorte.com solicitando el documento de garantía del equipo LN-450" },
-          { "text": "¡Listo! Correo enviado a carlos@logisticanorte.com\n\n📧 Asunto: Solicitud - Garantía equipo LN-450\n📋 Copia enviada a tu correo\n✅ Confirmación: Entregado" }
+        "prompts": [
+          {
+            "chip": "Enviar correo",
+            "userMsg": "Victoria, envíale un correo a carlos@logisticanorte.com solicitando la garantía del equipo LN-450",
+            "aiMsg": "¡Listo! Correo enviado a carlos@logisticanorte.com\n\n📧 Asunto: Solicitud - Garantía equipo LN-450\n📋 Copia enviada a tu correo\n✅ Confirmación: Entregado"
+          },
+          {
+            "chip": "¿Se entregó?",
+            "userMsg": "¿Se entregó el correo?",
+            "aiMsg": "✅ Confirmado. El correo a carlos@logisticanorte.com fue entregado a las 10:15 AM.\n\nEstado: Entregado\nApertura: Pendiente"
+          }
         ],
         "gmail": {
           "subject": "Solicitud - Garantía equipo LN-450",
@@ -111,9 +155,17 @@
       },
       {
         "label": "Template",
-        "messages": [
-          { "text": "Victoria, envía el template de cobro mensual a finanzas@grupoandino.com" },
-          { "text": "¡Template \"Cobro Mensual\" enviado!\n\n📧 Destinatario: finanzas@grupoandino.com\n📄 Template: Cobro Mensual - Marzo 2026\n📋 Copia enviada a tu correo\n✅ Confirmación: Entregado" }
+        "prompts": [
+          {
+            "chip": "Enviar template",
+            "userMsg": "Victoria, envía el template de cobro mensual a finanzas@grupoandino.com",
+            "aiMsg": "¡Template \"Cobro Mensual\" enviado!\n\n📧 Destinatario: finanzas@grupoandino.com\n📄 Template: Cobro Mensual - Marzo 2026\n📋 Copia enviada a tu correo\n✅ Confirmación: Entregado"
+          },
+          {
+            "chip": "¿Qué templates hay?",
+            "userMsg": "¿Qué templates tengo disponibles?",
+            "aiMsg": "Templates disponibles:\n\n📄 Cobro Mensual\n📄 Presupuesto\n📄 Acuse de Recibo\n📄 Reporte Semanal\n📄 Recordatorio de Pago"
+          }
         ],
         "gmail": {
           "subject": "Cobro Mensual - Marzo 2026",
@@ -122,8 +174,17 @@
       },
       {
         "label": "Facturación",
-        "messages": [
-          { "text": "🔔 Servicio completado detectado\nCliente: Logistica Norte\nServicio: Mantenimiento LN-450\n\n📄 Factura #0892 generada ($2,800 USD)\nPendiente de autorización" }
+        "prompts": [
+          {
+            "chip": "Ver facturación",
+            "userMsg": null,
+            "aiMsg": "🔔 Servicio completado detectado\nCliente: Logistica Norte\nServicio: Mantenimiento LN-450\n\n📄 Factura #0892 generada ($2,800 USD)\nPendiente de autorización"
+          },
+          {
+            "chip": "Estado de facturas",
+            "userMsg": "¿Cuál es el estado de las últimas facturas?",
+            "aiMsg": "📊 Resumen de facturación:\n\n✅ #0892 — Aprobada ($2,800)\n⏳ #0856 — Pendiente de pago ($5,200)\n✅ #0834 — Pagada ($1,900)\n✅ #0821 — Pagada ($12,000)\n\nTotal pendiente: $5,200 USD"
+          }
         ],
         "pdf": {
           "client": "Logistica Norte S.A. de C.V.",

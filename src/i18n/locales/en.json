@@ -20,6 +20,14 @@
     "ctaPrimary": "Book a consultation",
     "ctaSecondary": "View services"
   },
+  "frictionBadges": {
+    "freeConsultation": "Free consultation",
+    "noCommitment": "No commitment",
+    "resultsIn1Week": "Results in 1 week",
+    "tryNow": "Try the experience — no sign-up needed",
+    "thirtyMin": "30 min",
+    "free": "Free"
+  },
   "problema": {
     "title": "The problem we solve",
     "withoutPonos": "Without Ponos",
@@ -35,6 +43,16 @@
       "AI agents that execute operational tasks",
       "Connected data accessible in real time",
       "Smart alerts before it's too late"
+    ]
+  },
+  "impactStats": {
+    "title": "Real results",
+    "subtitle": "The impact of automating operations with AI.",
+    "items": [
+      { "value": "85%", "number": 85, "suffix": "%", "label": "Reduction in invoicing time" },
+      { "value": "10x", "number": 10, "suffix": "x", "label": "Faster report generation" },
+      { "value": "3hrs", "number": 3, "suffix": "hrs", "label": "Saved per day" },
+      { "value": "98%", "number": 98, "suffix": "%", "label": "Alert delivery rate" }
     ]
   },
   "servicios": {
@@ -66,10 +84,15 @@
   },
   "demos": {
     "title": "See how it works",
-    "subtitle": "Real demos of our solutions in action.",
+    "subtitle": "Interactive demos of our solutions. Click to try them out.",
+    "followUpLabels": {
+      "viewEmail": "View sent email →",
+      "viewInvoice": "View invoice →",
+      "viewSentEmails": "View sent emails →"
+    },
     "whatsapp": {
       "online": "online",
-      "messagePlaceholder": "Message",
+      "messagePlaceholder": "Choose an option...",
       "today": "TODAY"
     },
     "gmail": {
@@ -93,16 +116,37 @@
     "items": [
       {
         "label": "Daily Briefing",
-        "messages": [
-          { "text": "Give me today's briefing" },
-          { "text": "Good morning! Here's your summary:\n\n📊 Pending invoices: 8 ($12,450 USD)\n⚠️ Overdue collections: 3 (15+ days ago)\n📅 Meetings today: 2 (10am Logística Norte, 3pm Grupo Andino)\n✅ Tasks completed yesterday: 5/7" }
+        "prompts": [
+          {
+            "chip": "Today's briefing",
+            "userMsg": "Give me today's briefing",
+            "aiMsg": "Good morning! Here's your summary:\n\n📊 Pending invoices: 8 ($12,450 USD)\n⚠️ Overdue collections: 3 (15+ days)\n📅 Meetings today: 2 (10am Logística Norte, 3pm Grupo Andino)\n✅ Tasks completed yesterday: 5/7"
+          },
+          {
+            "chip": "Pending invoices?",
+            "userMsg": "How many pending invoices do I have?",
+            "aiMsg": "You have 8 pending invoices for $12,450 USD:\n\n1. Logística Norte — $2,800 (due today)\n2. Grupo Andino — $5,200 (3 days)\n3. Transportes Valle — $1,900 (overdue 5d)\n4. Industrias MX — $2,550 (7 days)"
+          },
+          {
+            "chip": "Today's meetings",
+            "userMsg": "What meetings do I have today?",
+            "aiMsg": "You have 2 meetings today:\n\n📅 10:00 AM — Logística Norte\nTopic: Q2 contract review\n\n📅 3:00 PM — Grupo Andino\nTopic: New team onboarding"
+          }
         ]
       },
       {
         "label": "Email",
-        "messages": [
-          { "text": "Victoria, send an email to carlos@logisticanorte.com requesting the warranty document for equipment LN-450" },
-          { "text": "Done! Email sent to carlos@logisticanorte.com\n\n📧 Subject: Request - Warranty for equipment LN-450\n📋 Copy sent to your email\n✅ Confirmation: Delivered" }
+        "prompts": [
+          {
+            "chip": "Send email",
+            "userMsg": "Victoria, send an email to carlos@logisticanorte.com requesting the warranty for equipment LN-450",
+            "aiMsg": "Done! Email sent to carlos@logisticanorte.com\n\n📧 Subject: Request - Warranty for equipment LN-450\n📋 Copy sent to your email\n✅ Confirmation: Delivered"
+          },
+          {
+            "chip": "Was it delivered?",
+            "userMsg": "Was the email delivered?",
+            "aiMsg": "✅ Confirmed. The email to carlos@logisticanorte.com was delivered at 10:15 AM.\n\nStatus: Delivered\nOpened: Pending"
+          }
         ],
         "gmail": {
           "subject": "Request - Warranty for equipment LN-450",
@@ -111,9 +155,17 @@
       },
       {
         "label": "Template",
-        "messages": [
-          { "text": "Victoria, send the monthly billing template to finanzas@grupoandino.com" },
-          { "text": "Template \"Monthly Billing\" sent!\n\n📧 Recipient: finanzas@grupoandino.com\n📄 Template: Monthly Billing - March 2026\n📋 Copy sent to your email\n✅ Confirmation: Delivered" }
+        "prompts": [
+          {
+            "chip": "Send template",
+            "userMsg": "Victoria, send the monthly billing template to finanzas@grupoandino.com",
+            "aiMsg": "Template \"Monthly Billing\" sent!\n\n📧 Recipient: finanzas@grupoandino.com\n📄 Template: Monthly Billing - March 2026\n📋 Copy sent to your email\n✅ Confirmation: Delivered"
+          },
+          {
+            "chip": "Available templates?",
+            "userMsg": "What templates do I have available?",
+            "aiMsg": "Available templates:\n\n📄 Monthly Billing\n📄 Quote / Estimate\n📄 Acknowledgment of Receipt\n📄 Weekly Report\n📄 Payment Reminder"
+          }
         ],
         "gmail": {
           "subject": "Monthly Billing - March 2026",
@@ -122,8 +174,17 @@
       },
       {
         "label": "Invoicing",
-        "messages": [
-          { "text": "🔔 Completed service detected\nClient: Logistica Norte\nService: Maintenance LN-450\n\n📄 Invoice #0892 generated ($2,800 USD)\nPending authorization" }
+        "prompts": [
+          {
+            "chip": "View invoicing",
+            "userMsg": null,
+            "aiMsg": "🔔 Completed service detected\nClient: Logistica Norte\nService: Maintenance LN-450\n\n📄 Invoice #0892 generated ($2,800 USD)\nPending authorization"
+          },
+          {
+            "chip": "Invoice status",
+            "userMsg": "What's the status of recent invoices?",
+            "aiMsg": "📊 Invoicing summary:\n\n✅ #0892 — Approved ($2,800)\n⏳ #0856 — Pending payment ($5,200)\n✅ #0834 — Paid ($1,900)\n✅ #0821 — Paid ($12,000)\n\nTotal pending: $5,200 USD"
+          }
         ],
         "pdf": {
           "client": "Logistica Norte S.A. de C.V.",

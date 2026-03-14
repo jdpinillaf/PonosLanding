@@ -130,6 +130,32 @@ export default function Hero() {
             {t('hero.ctaSecondary')}
           </a>
         </div>
+
+        {/* Friction reducer badges */}
+        <div
+          className="mt-6 flex flex-wrap items-center justify-center gap-3"
+          style={{
+            opacity: loaded ? 1 : 0,
+            transition: 'opacity 0.7s ease-out',
+            transitionDelay: '2400ms',
+          }}
+        >
+          {[
+            t('frictionBadges.freeConsultation'),
+            t('frictionBadges.noCommitment'),
+            t('frictionBadges.resultsIn1Week'),
+          ].map((badge) => (
+            <span
+              key={badge}
+              className="inline-flex items-center gap-1.5 rounded-full bg-emerald/10 px-3 py-1 text-xs font-medium text-emerald"
+            >
+              <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+              </svg>
+              {badge}
+            </span>
+          ))}
+        </div>
       </div>
 
       {/* Scroll indicator */}

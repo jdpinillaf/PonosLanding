@@ -21,6 +21,7 @@ export default function ScrollReveal({ children, className = '', delay = 0 }: Pr
           setTimeout(() => {
             el.style.opacity = '1';
             el.style.transform = 'translateY(0)';
+            el.style.filter = 'blur(0)';
           }, delay);
           observer.unobserve(el);
         }
@@ -39,7 +40,8 @@ export default function ScrollReveal({ children, className = '', delay = 0 }: Pr
       style={{
         opacity: 0,
         transform: 'translateY(30px)',
-        transition: 'opacity 0.7s ease-out, transform 0.7s ease-out',
+        filter: 'blur(6px)',
+        transition: 'opacity 0.7s ease-out, transform 0.7s ease-out, filter 0.7s ease-out',
       }}
     >
       {children}

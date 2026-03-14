@@ -25,7 +25,7 @@ export default function Servicios() {
         <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((s, i) => (
             <ScrollReveal key={i} delay={i * 100} className="h-full">
-              <div className="group relative h-full rounded-2xl border border-sand bg-white/50 p-7 transition-all duration-300 hover:-translate-y-1 hover:border-amber/30 hover:shadow-xl hover:shadow-amber/5">
+              <div className="group relative h-full rounded-2xl border border-sand bg-white/50 p-7 hover:-translate-y-1 hover:scale-[1.02] hover:border-amber/30 hover:shadow-xl hover:shadow-amber/5" style={{ transition: 'all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)' }}>
                 {soonIndexes.includes(i) && (
                   <span className="absolute right-4 top-4 rounded-full bg-amber/10 px-3 py-1 text-xs font-medium text-amber">
                     {t('servicios.comingSoon')}

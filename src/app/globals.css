@@ -25,6 +25,39 @@ html {
   50% { transform: translateY(8px); opacity: 1; }
 }
 
+/* Typing indicator dots */
+@keyframes typing-dot {
+  0%, 60%, 100% { opacity: 0.3; transform: translateY(0); }
+  30% { opacity: 1; transform: translateY(-4px); }
+}
+
+/* Screen transition */
+@keyframes screen-enter {
+  from { transform: translateX(60px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* Chat message entrance */
+@keyframes msg-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-msg-in {
+  animation: msg-in 0.4s ease-out;
+}
+
+/* Prompt chip pulse */
+@keyframes chip-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 168, 132, 0.4); }
+  50% { box-shadow: 0 0 0 6px rgba(0, 168, 132, 0); }
+}
+.animate-chip-pulse {
+  animation: chip-pulse 2s ease-in-out infinite;
+}
+.animate-chip-pulse:hover {
+  animation: none;
+}
+
 /* Hide custom cursor on touch devices */
 @media (hover: none) and (pointer: coarse) {
   .cursor-dot, .cursor-ring { display: none !important; }
