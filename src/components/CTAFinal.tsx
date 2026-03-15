@@ -1,5 +1,6 @@
 'use client';
 
+import Script from 'next/script';
 import ScrollReveal from './ScrollReveal';
 import { useTranslation } from '@/i18n/context';
 
@@ -7,7 +8,8 @@ export default function CTAFinal() {
   const { t } = useTranslation();
 
   return (
-    <section className="px-6 py-28">
+    <section id="book" className="px-6 py-28">
+      {/* Dark CTA card */}
       <ScrollReveal>
         <div className="mx-auto max-w-4xl overflow-hidden rounded-3xl bg-carbon px-8 py-16 text-center sm:px-16">
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/[0.03] to-transparent" />
@@ -17,12 +19,6 @@ export default function CTAFinal() {
           <p className="relative mx-auto mt-4 max-w-xl text-parchment/70">
             {t('cta.subtitle')}
           </p>
-          <a
-            href="#book"
-            className="relative mt-8 inline-block rounded-xl bg-amber px-10 py-4 text-lg font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-amber-light hover:shadow-xl hover:shadow-amber/30"
-          >
-            {t('cta.button')}
-          </a>
           <div className="relative mt-5 flex flex-wrap items-center justify-center gap-3">
             {[
               t('frictionBadges.free'),
@@ -42,6 +38,23 @@ export default function CTAFinal() {
           </div>
         </div>
       </ScrollReveal>
+
+      {/* Calendly embed directly below */}
+      <div className="mx-auto max-w-4xl">
+        <ScrollReveal delay={200}>
+          <div className="mt-12 overflow-hidden rounded-2xl bg-white shadow-sm">
+            <div
+              className="calendly-inline-widget"
+              data-url="https://calendly.com/jdpf1803/30min"
+              style={{ minWidth: '320px', height: '700px' }}
+            />
+          </div>
+        </ScrollReveal>
+      </div>
+      <Script
+        src="https://assets.calendly.com/assets/external/widget.js"
+        strategy="lazyOnload"
+      />
     </section>
   );
 }

@@ -10,15 +10,15 @@
     "demos": "Demos",
     "howItWorks": "How It Works",
     "successStories": "Success Stories",
-    "bookConsultation": "Book a consultation"
+    "bookConsultation": "Free diagnosis"
   },
   "hero": {
-    "headline": "AI-powered operations",
-    "headlineHighlight": "for service companies",
-    "subtitle": "We automate invoicing, dispatch, scheduling, and reporting — connected to your real data.",
+    "headline": "Your operations, running on their own.",
+    "headlineHighlight": "You just approve.",
+    "subtitle": "AI agents that automate invoicing, billing, reports, and dispatch — connected to your real data, delivered where you already work.",
     "tagline": "From chaos to order, automated.",
-    "ctaPrimary": "Book a consultation",
-    "ctaSecondary": "View services"
+    "ctaPrimary": "Get your free diagnosis",
+    "ctaSecondary": "See what we automate"
   },
   "frictionBadges": {
     "freeConsultation": "Free consultation",
@@ -29,35 +29,76 @@
     "free": "Free"
   },
   "problema": {
-    "title": "The problem we solve",
+    "title": "Is your team still doing this by hand?",
     "withoutPonos": "Without Ponos",
     "withPonos": "With Ponos",
     "pains": [
-      "Manual reports that take hours every week",
-      "Repetitive tasks draining your team",
-      "Disconnected data across systems",
-      "Critical information that doesn't arrive on time"
+      "Building invoices by copying data between systems — 15 min each",
+      "Your best people wasting hours on billing, reports, and follow-ups",
+      "Data in Excel, the CRM, and email — never matches",
+      "You found out about the overdue invoice when the client complained"
     ],
     "solutions": [
-      "Automatic reports delivered via WhatsApp",
-      "AI agents that execute operational tasks",
-      "Connected data accessible in real time",
-      "Smart alerts before it's too late"
+      "Invoices generated and sent automatically when the job is done",
+      "AI agents that handle billing, reports, and follow-ups for you",
+      "One source of truth connected to your real systems",
+      "Automatic alerts before the problem escalates"
     ]
   },
   "impactStats": {
-    "title": "Real results",
-    "subtitle": "The impact of automating operations with AI.",
+    "title": "Numbers we didn't make up",
+    "subtitle": "Measured with JPRO Solutions — our first invoicing automation client.",
     "items": [
-      { "value": "85%", "number": 85, "suffix": "%", "label": "Reduction in invoicing time" },
-      { "value": "10x", "number": 10, "suffix": "x", "label": "Faster report generation" },
-      { "value": "3hrs", "number": 3, "suffix": "hrs", "label": "Saved per day" },
-      { "value": "98%", "number": 98, "suffix": "%", "label": "Alert delivery rate" }
+      { "value": "15min", "number": 15, "suffix": "min", "label": "Saved per invoice created" },
+      { "value": "25", "number": 25, "suffix": "", "label": "Invoices processed per day" },
+      { "value": "6hrs", "number": 6, "suffix": "hrs", "label": "Of manual work eliminated daily" },
+      { "value": "31hrs", "number": 31, "suffix": "hrs", "label": "Recovered per week" }
+    ]
+  },
+  "roi": {
+    "sectionLabel": "The cost of not automating",
+    "title": "Before vs. After — with real data",
+    "subtitle": "Measured results with JPRO Solutions. Every row is a real process we automated.",
+    "beforeLabel": "Before",
+    "afterLabel": "With Ponos",
+    "roiLabel": "Estimated ROI",
+    "roiValue": "Payback in the first month",
+    "rows": [
+      {
+        "process": "Create an invoice",
+        "before": "15 min manual work",
+        "after": "~1 min — just review and approve"
+      },
+      {
+        "process": "Invoices per day (25)",
+        "before": "6+ hours of manual work",
+        "after": "~30 min of oversight"
+      },
+      {
+        "process": "Generate reports",
+        "before": "Manual calculation in Excel",
+        "after": "Automatic, delivered via WhatsApp"
+      },
+      {
+        "process": "Send collections",
+        "before": "Email by email, one at a time",
+        "after": "Automatic batch with tracking"
+      },
+      {
+        "process": "Invoicing errors",
+        "before": "Frequent — miscopied data",
+        "after": "<1% — data straight from the system"
+      },
+      {
+        "process": "Hours recovered / week",
+        "before": "0",
+        "after": "31+ hours"
+      }
     ]
   },
   "servicios": {
     "title": "What We Automate",
-    "subtitle": "AI-powered operations tailored to your service company.",
+    "subtitle": "Each service connects your existing tools and eliminates manual work.",
     "comingSoon": "Coming Soon",
     "items": [
       {
@@ -84,7 +125,7 @@
   },
   "demos": {
     "title": "See how it works",
-    "subtitle": "Interactive demos of our solutions. Click to try them out.",
+    "subtitle": "Try it yourself — these are real interactive demos.",
     "followUpLabels": {
       "viewEmail": "View sent email →",
       "viewInvoice": "View invoice →",
@@ -213,7 +254,56 @@
       },
       {
         "title": "Results",
-        "description": "Your team receives reports, alerts, and automations where they already work: WhatsApp, email, or your platform."
+        "description": "Your team receives reports, alerts, and automations where they already work: WhatsApp, email, or your platform. And every month, the agent gets more precise."
+      }
+    ]
+  },
+  "aiGrows": {
+    "sectionLabel": "An agent that grows with you",
+    "title": "Every month, your AI agent becomes more useful",
+    "subtitle": "It's not a static script. It's an agent that learns your operation and adapts.",
+    "items": [
+      {
+        "time": "Week 1",
+        "title": "Executes",
+        "description": "Automates operational tasks: invoicing, reports, alerts. Your team stops doing repetitive manual work."
+      },
+      {
+        "time": "Month 1",
+        "title": "Learns",
+        "description": "Recognizes your recurring clients, most-used workflows, and preferred formats. Fewer corrections, more precision."
+      },
+      {
+        "time": "Month 3",
+        "title": "Anticipates",
+        "description": "Detects patterns: peak demand seasons, late-paying clients, workload spikes. Alerts you before there's a problem."
+      },
+      {
+        "time": "Month 6+",
+        "title": "Optimizes",
+        "description": "Suggests improvements you didn't know you needed. New automations, more efficient processes, opportunities you were missing."
+      }
+    ]
+  },
+  "trust": {
+    "sectionLabel": "Your data, your control",
+    "title": "We connect your systems. We never replace them.",
+    "items": [
+      {
+        "title": "Your data never leaves your systems",
+        "description": "We connect to your existing tools via API — your CRM, ERP, accounting system, or management platform. We don't copy, store, or migrate your information."
+      },
+      {
+        "title": "Minimal access, maximum results",
+        "description": "We only request the permissions needed for each automation. Nothing more. You can revoke access at any time."
+      },
+      {
+        "title": "No vendor lock-in",
+        "description": "Your data lives in your tools, not ours. If you leave Ponos, your systems keep working exactly the same."
+      },
+      {
+        "title": "Full transparency",
+        "description": "Every action the AI agent takes is logged. You know exactly what it did, when, and why."
       }
     ]
   },
@@ -223,19 +313,47 @@
       {
         "name": "JPRO Solutions",
         "sector": "Financial Services",
-        "quote": "We automated collections and invoicing, reducing hours of manual work every week."
+        "quote": "We process ~25 invoices per day. Before, each one took 15 minutes of manual work — pulling data from Service Fusion, creating the invoice in QuickBooks, generating the PDF, and emailing it. Now Ponos does it automatically: the user just reviews and approves. We save over 6 hours every day.",
+        "metrics": ["15 min saved per invoice", "6+ hrs/day eliminated", "Implemented in 2 weeks"]
       },
       {
         "name": "Ponos",
-        "sector": "Dogfooding",
-        "quote": "We use our own tools. Our Second Brain documents everything we do."
+        "sector": "Own methodology",
+        "quote": "We use our own tools internally. If we don't trust what we build, why would you?",
+        "metrics": ["AI agents in production", "Documented Second Brain", "Continuous improvement"]
       }
     ]
   },
+  "integrations": {
+    "sectionLabel": "Integrations",
+    "title": "Works with what you already use",
+    "subtitle": "No migrations. No stack changes. We connect your existing tools.",
+    "cta": "Use another system? Let's talk.",
+    "items": [
+      { "name": "Service Fusion", "category": "Field Service" },
+      { "name": "QuickBooks", "category": "Accounting" },
+      { "name": "WhatsApp", "category": "Messaging" },
+      { "name": "Gmail", "category": "Email" },
+      { "name": "AWS", "category": "Cloud" },
+      { "name": "Telegram", "category": "Messaging" },
+      { "name": "OpenClaw", "category": "AI Agents" },
+      { "name": "PostgreSQL", "category": "Database" }
+    ]
+  },
+  "founder": {
+    "sectionLabel": "Who's behind Ponos",
+    "name": "Jesus David Pinilla",
+    "role": "Founder, CEO & CTO",
+    "quote": "I built Ponos because I saw too many companies with valuable processes trapped in spreadsheets and manual work — not for lack of will, but because nobody showed them how to bring those processes to technology. Ponos exists to close that gap: we understand your operation, optimize it, and automate it with AI.",
+    "linkedin": "https://www.linkedin.com/in/jesus-david-pinilla/",
+    "credential1": "Software engineer",
+    "credential2": "AI Operations specialist",
+    "credential3": "Builds and operates Ponos AI agents"
+  },
   "cta": {
-    "title": "Transform your operations with AI",
-    "subtitle": "Let's discuss how AI can simplify your company's processes. No commitment.",
-    "button": "Book your free consultation"
+    "title": "How many hours is your team losing this week?",
+    "subtitle": "In 30 minutes we diagnose your processes and show you exactly what can be automated.",
+    "button": "Get your free diagnosis"
   },
   "agendar": {
     "title": "Book your free consultation",

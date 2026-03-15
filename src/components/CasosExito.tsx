@@ -5,7 +5,7 @@ import { useTranslation } from '@/i18n/context';
 
 export default function CasosExito() {
   const { t, tArray } = useTranslation();
-  const casos = tArray<{ name: string; sector: string; quote: string }>('casos.items');
+  const casos = tArray<{ name: string; sector: string; quote: string; metrics?: string[] }>('casos.items');
 
   return (
     <section id="success-stories" className="px-6 py-28">
@@ -23,9 +23,21 @@ export default function CasosExito() {
                 <div className="mb-4 font-lora text-4xl leading-none text-amber/30">
                   &ldquo;
                 </div>
-                <p className="mb-8 text-base leading-relaxed text-carbon">
+                <p className="mb-6 text-base leading-relaxed text-carbon">
                   {c.quote}
                 </p>
+                {c.metrics && c.metrics.length > 0 && (
+                  <div className="mb-6 flex flex-wrap gap-2">
+                    {c.metrics.map((metric, j) => (
+                      <span
+                        key={j}
+                        className="rounded-full bg-amber/10 px-3 py-1 text-xs font-medium text-amber"
+                      >
+                        {metric}
+                      </span>
+                    ))}
+                  </div>
+                )}
                 <div className="flex items-center gap-3 border-t border-sand pt-6">
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-amber/10 font-lora text-sm font-bold text-amber">
                     {c.name.charAt(0)}

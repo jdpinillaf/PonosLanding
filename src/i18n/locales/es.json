@@ -10,15 +10,15 @@
     "demos": "Demos",
     "howItWorks": "Cómo Funciona",
     "successStories": "Casos de Éxito",
-    "bookConsultation": "Agendar consulta"
+    "bookConsultation": "Diagnóstico gratis"
   },
   "hero": {
-    "headline": "Operaciones impulsadas por IA",
-    "headlineHighlight": "para empresas de servicios",
-    "subtitle": "Automatizamos facturación, despacho, scheduling y reportes — conectados a tus datos reales.",
+    "headline": "Tu operación, funcionando sola.",
+    "headlineHighlight": "Tú solo apruebas.",
+    "subtitle": "Agentes AI que automatizan facturación, cobros, reportes y despacho — conectados a tus datos reales, entregados donde ya trabajas.",
     "tagline": "Del caos al orden, automatizado.",
-    "ctaPrimary": "Agenda una consulta",
-    "ctaSecondary": "Ver servicios"
+    "ctaPrimary": "Agenda tu diagnóstico gratis",
+    "ctaSecondary": "Ver qué automatizamos"
   },
   "frictionBadges": {
     "freeConsultation": "Consulta gratuita",
@@ -29,35 +29,76 @@
     "free": "Gratis"
   },
   "problema": {
-    "title": "El problema que resolvemos",
+    "title": "¿Tu equipo sigue haciendo esto a mano?",
     "withoutPonos": "Sin Ponos",
     "withPonos": "Con Ponos",
     "pains": [
-      "Reportes manuales que toman horas cada semana",
-      "Tareas repetitivas que consumen a tu equipo",
-      "Datos desconectados entre sistemas",
-      "Información crítica que no llega a tiempo"
+      "Armar facturas copiando datos entre sistemas — 15 min cada una",
+      "Tu mejor gente perdiendo horas en cobros, reportes y seguimientos",
+      "Datos en Excel, el CRM y el correo — nunca coinciden",
+      "Te enteraste de la factura vencida cuando el cliente se quejó"
     ],
     "solutions": [
-      "Reportes automáticos entregados por WhatsApp",
-      "Agentes AI que ejecutan tareas operacionales",
-      "Datos conectados y accesibles en tiempo real",
-      "Alertas inteligentes antes de que sea tarde"
+      "Facturas generadas y enviadas automáticamente al completar el servicio",
+      "Agentes AI que ejecutan cobros, reportes y seguimientos por ti",
+      "Una fuente de verdad conectada a tus sistemas reales",
+      "Alertas automáticas antes de que el problema escale"
     ]
   },
   "impactStats": {
-    "title": "Resultados reales",
-    "subtitle": "El impacto de automatizar operaciones con IA.",
+    "title": "Números que no inventamos",
+    "subtitle": "Medidos con JPRO Solutions — nuestro primer cliente de automatización de facturación.",
     "items": [
-      { "value": "85%", "number": 85, "suffix": "%", "label": "Reducción en tiempo de facturación" },
-      { "value": "10x", "number": 10, "suffix": "x", "label": "Más rápido en reportes" },
-      { "value": "3hrs", "number": 3, "suffix": "hrs", "label": "Ahorradas por día" },
-      { "value": "98%", "number": 98, "suffix": "%", "label": "Tasa de entrega de alertas" }
+      { "value": "15min", "number": 15, "suffix": "min", "label": "Ahorrados por factura creada" },
+      { "value": "25", "number": 25, "suffix": "", "label": "Facturas procesadas por día" },
+      { "value": "6hrs", "number": 6, "suffix": "hrs", "label": "De trabajo manual eliminadas al día" },
+      { "value": "31hrs", "number": 31, "suffix": "hrs", "label": "Recuperadas por semana" }
+    ]
+  },
+  "roi": {
+    "sectionLabel": "El costo de no automatizar",
+    "title": "Antes vs. Después — con datos reales",
+    "subtitle": "Resultados medidos con JPRO Solutions. Cada fila es un proceso real que automatizamos.",
+    "beforeLabel": "Antes",
+    "afterLabel": "Con Ponos",
+    "roiLabel": "ROI estimado",
+    "roiValue": "Recuperación en el primer mes",
+    "rows": [
+      {
+        "process": "Crear una factura",
+        "before": "15 min manuales",
+        "after": "~1 min — solo revisar y aprobar"
+      },
+      {
+        "process": "Facturas por día (25)",
+        "before": "6+ horas de trabajo manual",
+        "after": "~30 min de supervisión"
+      },
+      {
+        "process": "Generar reportes",
+        "before": "Cálculo manual en Excel",
+        "after": "Automático, entregado por WhatsApp"
+      },
+      {
+        "process": "Envío de cobros",
+        "before": "Email por email, uno a uno",
+        "after": "Batch automático con seguimiento"
+      },
+      {
+        "process": "Errores de facturación",
+        "before": "Frecuentes — datos mal copiados",
+        "after": "<1% — datos directo del sistema"
+      },
+      {
+        "process": "Horas recuperadas / semana",
+        "before": "0",
+        "after": "31+ horas"
+      }
     ]
   },
   "servicios": {
     "title": "Qué Automatizamos",
-    "subtitle": "Operaciones impulsadas por IA diseñadas para tu empresa de servicios.",
+    "subtitle": "Cada servicio conecta tus herramientas existentes y elimina trabajo manual.",
     "comingSoon": "Próximamente",
     "items": [
       {
@@ -84,7 +125,7 @@
   },
   "demos": {
     "title": "Mira cómo funciona",
-    "subtitle": "Demos interactivos de nuestras soluciones. Haz click para probar.",
+    "subtitle": "Pruébalo tú mismo — estos son demos interactivos reales.",
     "followUpLabels": {
       "viewEmail": "Ver correo enviado →",
       "viewInvoice": "Ver factura →",
@@ -213,7 +254,56 @@
       },
       {
         "title": "Resultados",
-        "description": "Tu equipo recibe reportes, alertas y automatizaciones donde ya trabaja: WhatsApp, email o tu plataforma."
+        "description": "Tu equipo recibe reportes, alertas y automatizaciones donde ya trabaja: WhatsApp, email o tu plataforma. Y cada mes, el agente es más preciso."
+      }
+    ]
+  },
+  "aiGrows": {
+    "sectionLabel": "Un agente que crece contigo",
+    "title": "Cada mes, tu agente AI es más útil que el anterior",
+    "subtitle": "No es un script estático. Es un agente que aprende tu operación y se adapta.",
+    "items": [
+      {
+        "time": "Semana 1",
+        "title": "Ejecuta",
+        "description": "Automatiza tareas operacionales: facturación, reportes, alertas. Tu equipo deja de hacer trabajo manual repetitivo."
+      },
+      {
+        "time": "Mes 1",
+        "title": "Aprende",
+        "description": "Reconoce tus clientes recurrentes, flujos más usados y formatos preferidos. Menos correcciones, más precisión."
+      },
+      {
+        "time": "Mes 3",
+        "title": "Anticipa",
+        "description": "Detecta patrones: temporadas de alta demanda, clientes que pagan tarde, picos de trabajo. Te alerta antes de que haya un problema."
+      },
+      {
+        "time": "Mes 6+",
+        "title": "Optimiza",
+        "description": "Sugiere mejoras que no sabías que necesitabas. Nuevas automatizaciones, procesos más eficientes, oportunidades que estabas dejando pasar."
+      }
+    ]
+  },
+  "trust": {
+    "sectionLabel": "Tu data, tu control",
+    "title": "Conectamos tus sistemas. Nunca los reemplazamos.",
+    "items": [
+      {
+        "title": "Tus datos nunca salen de tus sistemas",
+        "description": "Nos conectamos a tus herramientas existentes por API — tu CRM, ERP, sistema contable o plataforma de gestión. No copiamos, no almacenamos, no migramos tu información."
+      },
+      {
+        "title": "Acceso mínimo, resultado máximo",
+        "description": "Solo solicitamos los permisos necesarios para cada automatización. Nada más. Puedes revocar el acceso en cualquier momento."
+      },
+      {
+        "title": "Sin vendor lock-in",
+        "description": "Tu data vive en tus herramientas, no en las nuestras. Si dejas Ponos, tus sistemas siguen funcionando exactamente igual."
+      },
+      {
+        "title": "Transparencia total",
+        "description": "Cada acción que ejecuta el agente AI queda registrada. Sabes exactamente qué hizo, cuándo y por qué."
       }
     ]
   },
@@ -223,19 +313,47 @@
       {
         "name": "JPRO Solutions",
         "sector": "Servicios Financieros",
-        "quote": "Automatizamos cobros y facturación, reduciendo horas de trabajo manual cada semana."
+        "quote": "Procesamos ~25 facturas al día. Antes, cada una tomaba 15 minutos de trabajo manual — extraer datos de Service Fusion, crear la factura en QuickBooks, generar el PDF y enviarlo por correo. Ahora Ponos lo hace automáticamente: el usuario solo revisa y aprueba. Ahorramos más de 6 horas diarias.",
+        "metrics": ["15 min ahorrados por factura", "6+ hrs/día eliminadas", "Implementado en 2 semanas"]
       },
       {
         "name": "Ponos",
-        "sector": "Dogfooding",
-        "quote": "Usamos nuestras propias herramientas. Nuestro Second Brain documenta todo lo que hacemos."
+        "sector": "Metodología propia",
+        "quote": "Usamos nuestras propias herramientas internamente. Si no confiamos en lo que construimos, ¿por qué lo harías tú?",
+        "metrics": ["Agentes AI en producción", "Second Brain documentado", "Mejora continua"]
       }
     ]
   },
+  "integrations": {
+    "sectionLabel": "Integraciones",
+    "title": "Se integra con lo que ya usas",
+    "subtitle": "Sin migraciones. Sin cambios de stack. Conectamos tus herramientas existentes.",
+    "cta": "¿Usas otro sistema? Hablemos.",
+    "items": [
+      { "name": "Service Fusion", "category": "Field Service" },
+      { "name": "QuickBooks", "category": "Contabilidad" },
+      { "name": "WhatsApp", "category": "Mensajería" },
+      { "name": "Gmail", "category": "Correo" },
+      { "name": "AWS", "category": "Cloud" },
+      { "name": "Telegram", "category": "Mensajería" },
+      { "name": "OpenClaw", "category": "AI Agents" },
+      { "name": "PostgreSQL", "category": "Base de datos" }
+    ]
+  },
+  "founder": {
+    "sectionLabel": "Quién está detrás",
+    "name": "Jesus David Pinilla",
+    "role": "Founder, CEO & CTO",
+    "quote": "Creé Ponos porque vi demasiadas empresas con procesos valiosos atrapados en hojas de cálculo y trabajo manual — no por falta de voluntad, sino porque nadie les mostró cómo llevar esos procesos a tecnología. Ponos existe para cerrar esa brecha: entendemos tu operación, la optimizamos y la automatizamos con IA.",
+    "linkedin": "https://www.linkedin.com/in/jesus-david-pinilla/",
+    "credential1": "Ingeniero de software",
+    "credential2": "Especialista en AI Operations",
+    "credential3": "Construye y opera los agentes AI de Ponos"
+  },
   "cta": {
-    "title": "Transforma tu operación con AI",
-    "subtitle": "Conversemos sobre cómo AI puede simplificar los procesos de tu empresa. Sin compromiso.",
-    "button": "Agenda tu consulta gratuita"
+    "title": "¿Cuántas horas pierde tu equipo esta semana?",
+    "subtitle": "En 30 minutos diagnosticamos tus procesos y te mostramos exactamente qué se puede automatizar.",
+    "button": "Agendar diagnóstico gratis"
   },
   "agendar": {
     "title": "Agenda tu consulta gratuita",
